@@ -1,0 +1,29 @@
+{
+  "run_id": "example-run-id",
+  "bundle": {
+    "resourceType": "Bundle",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Patient"
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition"
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "text": "54M HTN chest pain on lisinopril SOB exertion",
+      "expected": {
+        "patient_summary": "54-year-old male with hypertension, chest pain, shortness of breath and on lisinopril",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    }
+  ]
+}
