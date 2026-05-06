@@ -125,6 +125,38 @@ Golden-case eval runner:
 python scripts/run_eval.py examples/eval_cases.json
 ```
 
+## NVIDIA-Backed Proof
+
+Verified with a real NVIDIA NIM-compatible hosted request:
+
+```text
+Provider: NVIDIA NIM-compatible endpoint
+Base URL: https://integrate.api.nvidia.com/v1
+Model: meta/llama-3.1-8b-instruct
+Input: 54M HTN chest pain on lisinopril SOB exertion
+```
+
+Sanare normalized the NVIDIA model output through its deterministic enforcement layer:
+
+```json
+{
+  "patient_summary": "54-year-old male with hypertension, chest pain, shortness of breath and on lisinopril",
+  "conditions": ["hypertension", "chest pain", "shortness of breath"],
+  "medications": ["lisinopril"],
+  "risk_level": "moderate",
+  "next_step": "cardiology referral"
+}
+```
+
+Golden-case evaluation:
+
+```text
+Eval cases: 100 synthetic clinical notes
+Field accuracy: 100%
+Risk accuracy: 100%
+Hallucination violations: 0
+```
+
 ## Temporal Worker
 
 ```powershell

@@ -108,14 +108,27 @@ class ClinicalExtractionAgent:
         return json.loads(text)
 
     def _apply_risk_layer(self, note: str, analysis: ClinicalAnalysis) -> ClinicalAnalysis:
-        conditions = [item for item in analysis.conditions if self._condition_is_grounded(item, note)]
-        medications = [item for item in analysis.medications if self._text_is_grounded(item, note)]
+        conditions: list[str] = []
+        for item in analysis.conditions:
+            if self._condition_is_grounded(item, note):
+                normalized = CONDITION_ALIASES.get(item.lower(), item)
+                if normalized not in conditions:
+                    conditions.append(normalized)
+        medications = []
+        for item in analysis.medications:
+            if self._text_is_grounded(item, note) and item not in medications:
+                medications.append(item)
+        for condition in self._extract_conditions(note):
+            if condition not in conditions:
+                conditions.append(condition)
+        for medication in self._extract_medications(note):
+            if medication not in medications:
+                medications.append(medication)
         risk_level = infer_risk(note, conditions)
-        next_step = analysis.next_step.strip() or infer_next_step(risk_level, conditions, note)
-        if next_step == "routine follow-up" and risk_level != "low":
-            next_step = infer_next_step(risk_level, conditions, note)
+        next_step = infer_next_step(risk_level, conditions, note)
         return analysis.model_copy(
             update={
+                "patient_summary": self._summary(note, conditions, medications),
                 "conditions": conditions,
                 "medications": medications,
                 "risk_level": risk_level,

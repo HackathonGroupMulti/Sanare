@@ -60,7 +60,6 @@ class LLMClient:
         request_kwargs: dict[str, Any] = {
             "model": self.config.model or self._default_model(provider),
             "temperature": self.config.temperature,
-            "response_format": {"type": "json_object"},
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
@@ -83,6 +82,8 @@ class LLMClient:
                     }
                 }
             }
+        else:
+            request_kwargs["response_format"] = {"type": "json_object"}
 
         response = client.chat.completions.create(
             **request_kwargs,
