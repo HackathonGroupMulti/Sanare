@@ -1,9 +1,9 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import re
 from dataclasses import dataclass
 
-from iasis.schemas import DeidentifiedNote
+from sanare.schemas import DeidentifiedNote
 
 
 @dataclass(frozen=True)
@@ -53,3 +53,4 @@ class ClinicalDeidentifier:
                 entities.add(recognizer.label)
                 redacted = recognizer.pattern.sub(f"<{recognizer.label}>", redacted)
         return DeidentifiedNote(text=redacted, phi_entities=sorted(entities))
+

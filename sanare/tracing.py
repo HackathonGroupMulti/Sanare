@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import os
 from contextlib import contextmanager
@@ -14,7 +14,7 @@ class NoopSpan:
 
 
 class Tracer:
-    def __init__(self, service_name: str = "iasis-agent-system") -> None:
+    def __init__(self, service_name: str = "sanare-agent-system") -> None:
         self._tracer = self._load_tracer(service_name)
 
     @contextmanager
@@ -28,7 +28,7 @@ class Tracer:
             yield span
 
     def _load_tracer(self, service_name: str) -> Any:
-        if os.getenv("IASIS_ENABLE_OTEL") != "1":
+        if os.getenv("SANARE_ENABLE_OTEL") != "1":
             return None
         try:
             from opentelemetry import trace
@@ -42,3 +42,4 @@ class Tracer:
         provider.add_span_processor(BatchSpanProcessor(ConsoleSpanExporter()))
         trace.set_tracer_provider(provider)
         return trace.get_tracer(service_name)
+

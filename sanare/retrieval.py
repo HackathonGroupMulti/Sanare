@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import os
 from dataclasses import dataclass
@@ -42,3 +42,4 @@ def build_retriever() -> ClinicalRetriever:
         except RuntimeError:
             return ClinicalRetriever()
     return ClinicalRetriever()
+

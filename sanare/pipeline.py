@@ -1,14 +1,14 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from uuid import uuid4
 
-from iasis.agent import ClinicalExtractionAgent
-from iasis.deidentify import ClinicalDeidentifier
-from iasis.fhir import FhirMapper
-from iasis.retrieval import ClinicalRetriever, build_retriever
-from iasis.schemas import AnalyzeEnvelope, ClinicalAnalysis, FhirEnvelope, RunRecord
-from iasis.storage import RunStore, build_run_store
-from iasis.tracing import Tracer
+from sanare.agent import ClinicalExtractionAgent
+from sanare.deidentify import ClinicalDeidentifier
+from sanare.fhir import FhirMapper
+from sanare.retrieval import ClinicalRetriever, build_retriever
+from sanare.schemas import AnalyzeEnvelope, ClinicalAnalysis, FhirEnvelope, RunRecord
+from sanare.storage import RunStore, build_run_store
+from sanare.tracing import Tracer
 
 
 class ClinicalPipeline:
@@ -67,3 +67,4 @@ class ClinicalPipeline:
 
     def get_run(self, run_id: str) -> RunRecord | None:
         return self.run_store.get(run_id)
+

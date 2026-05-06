@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import re
@@ -6,9 +6,9 @@ from typing import Any
 
 from pydantic import ValidationError
 
-from iasis.llm_client import LLMClient, LLMUnavailableError
-from iasis.risk import infer_next_step, infer_risk
-from iasis.schemas import ClinicalAnalysis
+from sanare.llm_client import LLMClient, LLMUnavailableError
+from sanare.risk import infer_next_step, infer_risk
+from sanare.schemas import ClinicalAnalysis
 
 SYSTEM_PROMPT = """You are a clinical extraction engine.
 
@@ -175,3 +175,4 @@ class ClinicalExtractionAgent:
         if not details:
             return f"{patient} with clinical note provided"
         return f"{patient} {' and '.join(details)}"
+

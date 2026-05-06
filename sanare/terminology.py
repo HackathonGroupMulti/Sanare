@@ -1,6 +1,6 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
-from iasis.schemas import CodedConcept
+from sanare.schemas import CodedConcept
 
 ICD10 = "http://hl7.org/fhir/sid/icd-10-cm"
 RXNORM = "http://www.nlm.nih.gov/research/umls/rxnorm"
@@ -46,3 +46,4 @@ class TerminologyMapper:
 
     def is_observation(self, condition: str) -> bool:
         return condition.lower() in SYMPTOM_OBSERVATION_TERMS
+

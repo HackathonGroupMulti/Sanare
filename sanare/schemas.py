@@ -1,4 +1,4 @@
-from typing import Any, Literal
+﻿from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -89,3 +89,24 @@ class EvaluationResult(BaseModel):
     risk_accuracy: float
     hallucination_violations: int
     failures: list[dict[str, Any]]
+
+
+class CapabilityReport(BaseModel):
+    name: str
+    version: str
+    endpoints: list[str]
+    mcp_tools: list[str]
+    fhir_resources: list[str]
+    optional_integrations: list[str]
+    security: dict[str, Any]
+
+
+class NvidiaRuntimeReport(BaseModel):
+    nvidia_smi_available: bool
+    cuda_visible_devices: str | None = None
+    driver_version: str | None = None
+    gpus: list[dict[str, Any]]
+    recommended_provider: str
+    nim_base_url: str
+    notes: list[str]
+

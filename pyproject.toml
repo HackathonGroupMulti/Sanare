@@ -1,0 +1,14 @@
+[project]
+name = "sanare"
+version = "0.2.0"
+description = "Clinical AI extraction infrastructure with PHI redaction, FHIR mapping, MCP tools, and structured LLM output."
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

@@ -1,10 +1,10 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
 from typing import Protocol
 
-from iasis.schemas import RunRecord
+from sanare.schemas import RunRecord
 
 
 class RunStore(Protocol):
@@ -74,5 +74,9 @@ class PostgresRunStore:
 
 def build_run_store() -> RunStore:
     if os.getenv("DATABASE_URL"):
-        return PostgresRunStore()
+        try:
+            return PostgresRunStore()
+        except RuntimeError:
+            return MemoryRunStore()
     return MemoryRunStore()
+

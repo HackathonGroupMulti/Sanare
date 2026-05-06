@@ -1,10 +1,10 @@
-services:
+﻿services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_USER: iasis
-      POSTGRES_PASSWORD: iasis
-      POSTGRES_DB: iasis
+      POSTGRES_USER: sanare
+      POSTGRES_PASSWORD: sanare
+      POSTGRES_DB: sanare
     ports:
       - "5432:5432"
     volumes:
@@ -51,3 +51,4 @@ services:
 volumes:
   postgres_data:
   qdrant_data:
+

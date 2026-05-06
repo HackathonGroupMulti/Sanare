@@ -1,10 +1,10 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from datetime import UTC, datetime
 from typing import Any
 
-from iasis.schemas import ClinicalAnalysis
-from iasis.terminology import SNOMED, TerminologyMapper
+from sanare.schemas import ClinicalAnalysis
+from sanare.terminology import SNOMED, TerminologyMapper
 
 
 class FhirMapper:
@@ -39,7 +39,7 @@ class FhirMapper:
         return {
             "resourceType": "Patient",
             "id": f"patient-{run_id}",
-            "identifier": [{"system": "urn:iasis:deidentified", "value": run_id}],
+            "identifier": [{"system": "urn:sanare:deidentified", "value": run_id}],
         }
 
     def _condition(self, run_id: str, index: int, condition: str, recorded_date: str) -> dict[str, Any]:
@@ -95,3 +95,4 @@ class FhirMapper:
             "subject": {"reference": f"Patient/patient-{run_id}"},
             "effectiveDateTime": effective_date,
         }
+

@@ -1,15 +1,19 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import asyncio
 import os
+import sys
+from pathlib import Path
 
-from iasis.temporal_app import AnalyzeNoteWorkflow, analyze_note_activity
-
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 async def main() -> None:
     try:
         from temporalio.client import Client
         from temporalio.worker import Worker
+        from sanare.temporal_app import AnalyzeNoteWorkflow, analyze_note_activity
     except ImportError as exc:
         raise RuntimeError("Install temporalio to run the Temporal worker") from exc
 
@@ -25,3 +29,4 @@ async def main() -> None:
 
 if __name__ == "__main__":
     asyncio.run(main())
+

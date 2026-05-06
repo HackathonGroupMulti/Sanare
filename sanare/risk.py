@@ -1,4 +1,4 @@
-HIGH_RISK_TERMS = {
+﻿HIGH_RISK_TERMS = {
     "stroke",
     "sepsis",
     "myocardial infarction",
@@ -49,3 +49,4 @@ def infer_next_step(risk_level: str, conditions: list[str], note: str) -> str:
     if risk_level == "moderate":
         return "clinician follow-up"
     return "routine follow-up"
+

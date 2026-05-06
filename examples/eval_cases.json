@@ -1,0 +1,1381 @@
+{
+  "cases": [
+    {
+      "text": "54M HTN chest pain on lisinopril SOB exertion",
+      "expected": {
+        "patient_summary": "54-year-old male with hypertension, chest pain, shortness of breath and on lisinopril",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "65F diabetes on metformin requesting follow-up",
+      "expected": {
+        "patient_summary": "65-year-old female with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "70M COPD SOB using albuterol",
+      "expected": {
+        "patient_summary": "70-year-old male with shortness of breath, copd and on albuterol",
+        "conditions": [
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "30F asthma cough on albuterol",
+      "expected": {
+        "patient_summary": "30-year-old female with asthma and on albuterol",
+        "conditions": [
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "44M HTN on amlodipine routine visit",
+      "expected": {
+        "patient_summary": "44-year-old male with hypertension and on amlodipine",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "amlodipine"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "58F hypertension on losartan medication refill",
+      "expected": {
+        "patient_summary": "58-year-old female with hypertension and on losartan",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "49M DM on insulin routine follow-up",
+      "expected": {
+        "patient_summary": "49-year-old male with diabetes and on insulin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "61F diabetes on metformin atorvastatin follow-up",
+      "expected": {
+        "patient_summary": "61-year-old female with diabetes and on atorvastatin, metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "atorvastatin",
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "72M chest pain SOB syncope",
+      "expected": {
+        "patient_summary": "72-year-old male with chest pain, shortness of breath",
+        "conditions": [
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [],
+        "risk_level": "high",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "63F chest pain shortness of breath on aspirin",
+      "expected": {
+        "patient_summary": "63-year-old female with chest pain, shortness of breath and on aspirin",
+        "conditions": [
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "67M pulmonary embolism concern SOB on apixaban",
+      "expected": {
+        "patient_summary": "67-year-old male with shortness of breath and on apixaban",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "55F sepsis concern fever on warfarin",
+      "expected": {
+        "patient_summary": "55-year-old female on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "60M heart attack concern chest pain on aspirin",
+      "expected": {
+        "patient_summary": "60-year-old male with chest pain and on aspirin",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "47F stroke symptoms on warfarin",
+      "expected": {
+        "patient_summary": "47-year-old female on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "39M respiratory distress asthma albuterol",
+      "expected": {
+        "patient_summary": "39-year-old male with asthma and on albuterol",
+        "conditions": [
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "52F COPD dyspnea on albuterol",
+      "expected": {
+        "patient_summary": "52-year-old female with shortness of breath, copd and on albuterol",
+        "conditions": [
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "36M medication refill lisinopril",
+      "expected": {
+        "patient_summary": "36-year-old male on lisinopril",
+        "conditions": [],
+        "medications": [
+          "lisinopril"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "42F rash on metformin",
+      "expected": {
+        "patient_summary": "42-year-old female on metformin",
+        "conditions": [],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "28M cold symptoms no meds",
+      "expected": {
+        "patient_summary": "28-year-old male with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "33F cough using albuterol",
+      "expected": {
+        "patient_summary": "33-year-old female on albuterol",
+        "conditions": [],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "75M HTN diabetes on lisinopril metformin",
+      "expected": {
+        "patient_summary": "75-year-old male with hypertension, diabetes and on lisinopril, metformin",
+        "conditions": [
+          "hypertension",
+          "diabetes"
+        ],
+        "medications": [
+          "lisinopril",
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "69F hypertension chest pain on amlodipine aspirin",
+      "expected": {
+        "patient_summary": "69-year-old female with hypertension, chest pain and on amlodipine, aspirin",
+        "conditions": [
+          "hypertension",
+          "chest pain"
+        ],
+        "medications": [
+          "amlodipine",
+          "aspirin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "57M DM SOB on insulin",
+      "expected": {
+        "patient_summary": "57-year-old male with shortness of breath, diabetes and on insulin",
+        "conditions": [
+          "shortness of breath",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "62F COPD chest pain SOB on albuterol aspirin",
+      "expected": {
+        "patient_summary": "62-year-old female with chest pain, shortness of breath, copd and on albuterol, aspirin",
+        "conditions": [
+          "chest pain",
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol",
+          "aspirin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "46M asthma shortness of breath using albuterol",
+      "expected": {
+        "patient_summary": "46-year-old male with shortness of breath, asthma and on albuterol",
+        "conditions": [
+          "shortness of breath",
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "53F HTN dyspnea on losartan",
+      "expected": {
+        "patient_summary": "53-year-old female with hypertension, shortness of breath and on losartan",
+        "conditions": [
+          "hypertension",
+          "shortness of breath"
+        ],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "64M uncontrolled diabetes on insulin metformin",
+      "expected": {
+        "patient_summary": "64-year-old male with diabetes and on insulin, metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "insulin",
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "59F abdominal pain on warfarin",
+      "expected": {
+        "patient_summary": "59-year-old female on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "41M chest pain on atorvastatin",
+      "expected": {
+        "patient_summary": "41-year-old male with chest pain and on atorvastatin",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [
+          "atorvastatin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "45F SOB exertion on apixaban",
+      "expected": {
+        "patient_summary": "45-year-old female with shortness of breath and on apixaban",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "80M syncope on warfarin",
+      "expected": {
+        "patient_summary": "80-year-old male on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "77F pulmonary embolism on apixaban",
+      "expected": {
+        "patient_summary": "77-year-old female on apixaban",
+        "conditions": [],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "68M myocardial infarction chest pain aspirin",
+      "expected": {
+        "patient_summary": "68-year-old male with chest pain and on aspirin",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "71F sepsis and respiratory distress",
+      "expected": {
+        "patient_summary": "71-year-old female with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "38M asthma medication refill albuterol",
+      "expected": {
+        "patient_summary": "38-year-old male with asthma and on albuterol",
+        "conditions": [
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "50F diabetes medication refill metformin",
+      "expected": {
+        "patient_summary": "50-year-old female with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "56M HTN medication refill lisinopril",
+      "expected": {
+        "patient_summary": "56-year-old male with hypertension and on lisinopril",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "73F COPD routine follow-up albuterol",
+      "expected": {
+        "patient_summary": "73-year-old female with copd and on albuterol",
+        "conditions": [
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "29M allergic rhinitis cold symptoms",
+      "expected": {
+        "patient_summary": "29-year-old male with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "31F rash cough",
+      "expected": {
+        "patient_summary": "31-year-old female with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "66M hypertension on amlodipine atorvastatin aspirin",
+      "expected": {
+        "patient_summary": "66-year-old male with hypertension and on amlodipine, aspirin, atorvastatin",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "amlodipine",
+          "aspirin",
+          "atorvastatin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "48F diabetes on metformin losartan",
+      "expected": {
+        "patient_summary": "48-year-old female with diabetes and on losartan, metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "losartan",
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "52M HTN diabetes chest pain on lisinopril metformin aspirin",
+      "expected": {
+        "patient_summary": "52-year-old male with hypertension, chest pain, diabetes and on aspirin, lisinopril, metformin",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "diabetes"
+        ],
+        "medications": [
+          "aspirin",
+          "lisinopril",
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "60F COPD SOB chest pain on albuterol apixaban",
+      "expected": {
+        "patient_summary": "60-year-old female with chest pain, shortness of breath, copd and on albuterol, apixaban",
+        "conditions": [
+          "chest pain",
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol",
+          "apixaban"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "34M asthma dyspnea albuterol",
+      "expected": {
+        "patient_summary": "34-year-old male with shortness of breath, asthma and on albuterol",
+        "conditions": [
+          "shortness of breath",
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "43F DM on metformin routine visit",
+      "expected": {
+        "patient_summary": "43-year-old female with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "74M hypertension SOB on losartan",
+      "expected": {
+        "patient_summary": "74-year-old male with hypertension, shortness of breath and on losartan",
+        "conditions": [
+          "hypertension",
+          "shortness of breath"
+        ],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "58M chest pain SOB on aspirin warfarin",
+      "expected": {
+        "patient_summary": "58-year-old male with chest pain, shortness of breath and on aspirin, warfarin",
+        "conditions": [
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "aspirin",
+          "warfarin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "62M syncope chest pain",
+      "expected": {
+        "patient_summary": "62-year-old male with chest pain",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "70F stroke concern HTN on amlodipine",
+      "expected": {
+        "patient_summary": "70-year-old female with hypertension and on amlodipine",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "amlodipine"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "37F cough medication refill",
+      "expected": {
+        "patient_summary": "37-year-old female with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "40M rash on atorvastatin",
+      "expected": {
+        "patient_summary": "40-year-old male on atorvastatin",
+        "conditions": [],
+        "medications": [
+          "atorvastatin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "35F cold on aspirin",
+      "expected": {
+        "patient_summary": "35-year-old female on aspirin",
+        "conditions": [],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "32M allergic rhinitis on losartan",
+      "expected": {
+        "patient_summary": "32-year-old male on losartan",
+        "conditions": [],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "76F diabetes HTN on insulin lisinopril",
+      "expected": {
+        "patient_summary": "76-year-old female with hypertension, diabetes and on insulin, lisinopril",
+        "conditions": [
+          "hypertension",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin",
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "81M COPD dyspnea respiratory distress albuterol",
+      "expected": {
+        "patient_summary": "81-year-old male with shortness of breath, copd and on albuterol",
+        "conditions": [
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "63M pulmonary embolism SOB apixaban",
+      "expected": {
+        "patient_summary": "63-year-old male with shortness of breath and on apixaban",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "69F heart attack chest pain aspirin",
+      "expected": {
+        "patient_summary": "69-year-old female with chest pain and on aspirin",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "57F sepsis diabetes on metformin",
+      "expected": {
+        "patient_summary": "57-year-old female with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "46M myocardial infarction on aspirin",
+      "expected": {
+        "patient_summary": "46-year-old male on aspirin",
+        "conditions": [],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "51F hypertension abdominal pain on losartan",
+      "expected": {
+        "patient_summary": "51-year-old female with hypertension and on losartan",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "49M diabetes abdominal pain on metformin",
+      "expected": {
+        "patient_summary": "49-year-old male with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "55M asthma chest pain on albuterol",
+      "expected": {
+        "patient_summary": "55-year-old male with chest pain, asthma and on albuterol",
+        "conditions": [
+          "chest pain",
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "44F COPD shortness of breath",
+      "expected": {
+        "patient_summary": "44-year-old female with shortness of breath, copd",
+        "conditions": [
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "72F HTN chest pain SOB on amlodipine",
+      "expected": {
+        "patient_summary": "72-year-old female with hypertension, chest pain, shortness of breath and on amlodipine",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "amlodipine"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "67M diabetes SOB on insulin",
+      "expected": {
+        "patient_summary": "67-year-old male with shortness of breath, diabetes and on insulin",
+        "conditions": [
+          "shortness of breath",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "36F dyspnea on albuterol",
+      "expected": {
+        "patient_summary": "36-year-old female with shortness of breath and on albuterol",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "29F asthma routine follow-up",
+      "expected": {
+        "patient_summary": "29-year-old female with asthma",
+        "conditions": [
+          "asthma"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "84M medication refill warfarin",
+      "expected": {
+        "patient_summary": "84-year-old male on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "78F medication refill apixaban",
+      "expected": {
+        "patient_summary": "78-year-old female on apixaban",
+        "conditions": [],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "47M on atorvastatin routine follow-up",
+      "expected": {
+        "patient_summary": "47-year-old male on atorvastatin",
+        "conditions": [],
+        "medications": [
+          "atorvastatin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "52F on aspirin routine follow-up",
+      "expected": {
+        "patient_summary": "52-year-old female on aspirin",
+        "conditions": [],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "59M HTN on lisinopril losartan",
+      "expected": {
+        "patient_summary": "59-year-old male with hypertension and on lisinopril, losartan",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "lisinopril",
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "61F hypertension on amlodipine losartan",
+      "expected": {
+        "patient_summary": "61-year-old female with hypertension and on amlodipine, losartan",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "amlodipine",
+          "losartan"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "65M diabetes on insulin metformin atorvastatin",
+      "expected": {
+        "patient_summary": "65-year-old male with diabetes and on atorvastatin, insulin, metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "atorvastatin",
+          "insulin",
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "68F COPD asthma on albuterol",
+      "expected": {
+        "patient_summary": "68-year-old female with asthma, copd and on albuterol",
+        "conditions": [
+          "asthma",
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "73M chest pain dyspnea on aspirin",
+      "expected": {
+        "patient_summary": "73-year-old male with chest pain, shortness of breath and on aspirin",
+        "conditions": [
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "64F SOB chest pain on apixaban",
+      "expected": {
+        "patient_summary": "64-year-old female with chest pain, shortness of breath and on apixaban",
+        "conditions": [
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "58M uncontrolled diabetes SOB insulin",
+      "expected": {
+        "patient_summary": "58-year-old male with shortness of breath, diabetes and on insulin",
+        "conditions": [
+          "shortness of breath",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "42F abdominal pain cough",
+      "expected": {
+        "patient_summary": "42-year-old female with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "39M rash medication refill",
+      "expected": {
+        "patient_summary": "39-year-old male with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "45M cold cough",
+      "expected": {
+        "patient_summary": "45-year-old male with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "50M HTN cough on lisinopril",
+      "expected": {
+        "patient_summary": "50-year-old male with hypertension and on lisinopril",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "54F diabetes rash on metformin",
+      "expected": {
+        "patient_summary": "54-year-old female with diabetes and on metformin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "metformin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "60M COPD cold on albuterol",
+      "expected": {
+        "patient_summary": "60-year-old male with copd and on albuterol",
+        "conditions": [
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "62F asthma allergic rhinitis albuterol",
+      "expected": {
+        "patient_summary": "62-year-old female with asthma and on albuterol",
+        "conditions": [
+          "asthma"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "71M syncope HTN on warfarin",
+      "expected": {
+        "patient_summary": "71-year-old male with hypertension and on warfarin",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "75F respiratory distress COPD albuterol",
+      "expected": {
+        "patient_summary": "75-year-old female with copd and on albuterol",
+        "conditions": [
+          "copd"
+        ],
+        "medications": [
+          "albuterol"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "69M stroke symptoms diabetes insulin",
+      "expected": {
+        "patient_summary": "69-year-old male with diabetes and on insulin",
+        "conditions": [
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "66F sepsis HTN losartan",
+      "expected": {
+        "patient_summary": "66-year-old female with hypertension and on losartan",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [
+          "losartan"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "53M pulmonary embolism chest pain apixaban",
+      "expected": {
+        "patient_summary": "53-year-old male with chest pain and on apixaban",
+        "conditions": [
+          "chest pain"
+        ],
+        "medications": [
+          "apixaban"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "48F heart attack SOB aspirin",
+      "expected": {
+        "patient_summary": "48-year-old female with shortness of breath and on aspirin",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "57M myocardial infarction SOB aspirin",
+      "expected": {
+        "patient_summary": "57-year-old male with shortness of breath and on aspirin",
+        "conditions": [
+          "shortness of breath"
+        ],
+        "medications": [
+          "aspirin"
+        ],
+        "risk_level": "high",
+        "next_step": "urgent clinical evaluation"
+      }
+    },
+    {
+      "text": "35M no active symptoms",
+      "expected": {
+        "patient_summary": "35-year-old male with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "27F routine checkup",
+      "expected": {
+        "patient_summary": "27-year-old female with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "90M on warfarin",
+      "expected": {
+        "patient_summary": "90-year-old male on warfarin",
+        "conditions": [],
+        "medications": [
+          "warfarin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "82F on apixaban aspirin",
+      "expected": {
+        "patient_summary": "82-year-old female on apixaban, aspirin",
+        "conditions": [],
+        "medications": [
+          "apixaban",
+          "aspirin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "text": "46F hypertension diabetes asthma on losartan metformin albuterol",
+      "expected": {
+        "patient_summary": "46-year-old female with hypertension, diabetes, asthma and on albuterol, losartan, metformin",
+        "conditions": [
+          "hypertension",
+          "diabetes",
+          "asthma"
+        ],
+        "medications": [
+          "albuterol",
+          "losartan",
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "text": "52M HTN COPD chest pain SOB on lisinopril albuterol aspirin",
+      "expected": {
+        "patient_summary": "52-year-old male with hypertension, chest pain, shortness of breath, copd and on albuterol, aspirin, lisinopril",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "shortness of breath",
+          "copd"
+        ],
+        "medications": [
+          "albuterol",
+          "aspirin",
+          "lisinopril"
+        ],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "text": "63F DM hypertension dyspnea on metformin amlodipine",
+      "expected": {
+        "patient_summary": "63-year-old female with hypertension, shortness of breath, diabetes and on amlodipine, metformin",
+        "conditions": [
+          "hypertension",
+          "shortness of breath",
+          "diabetes"
+        ],
+        "medications": [
+          "amlodipine",
+          "metformin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+services:
+  nim-llm:
+    image: ${NVIDIA_NIM_IMAGE:-nvcr.io/nim/meta/llama-3.1-8b-instruct:latest}
+    profiles:
+      - nvidia
+    ports:
+      - "8001:8000"
+    environment:
+      NGC_API_KEY: ${NGC_API_KEY}
+    volumes:
+      - nim_cache:/opt/nim/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: ["gpu"]
+
+  sanare-api-nvidia:
+    build: .
+    profiles:
+      - nvidia
+    ports:
+      - "8000:8000"
+    environment:
+      LLM_PROVIDER: nvidia
+      NVIDIA_NIM_BASE_URL: http://nim-llm:8000/v1
+      NVIDIA_MODEL: ${NVIDIA_MODEL:-meta/llama-3.1-8b-instruct}
+      DATABASE_URL: postgresql://sanare:sanare@postgres:5432/sanare
+      QDRANT_URL: http://qdrant:6333
+      SANARE_ENABLE_OTEL: "1"
+    depends_on:
+      - nim-llm
+
+volumes:
+  nim_cache:

@@ -1,4 +1,4 @@
-{
+﻿{
   "patient_summary": "54-year-old male with hypertension, chest pain, shortness of breath and on lisinopril",
   "conditions": [
     "hypertension",
@@ -11,3 +11,4 @@
   "risk_level": "moderate",
   "next_step": "cardiology referral"
 }
+

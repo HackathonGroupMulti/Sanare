@@ -1,8 +1,8 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from datetime import timedelta
 
-from iasis.pipeline import ClinicalPipeline
+from sanare.pipeline import ClinicalPipeline
 
 try:
     from temporalio import activity, workflow
@@ -27,4 +27,5 @@ if activity and workflow:
                 text,
                 start_to_close_timeout=timedelta(seconds=45),
             )
+
 

@@ -1,4 +1,4 @@
-from fastapi.testclient import TestClient
+﻿from fastapi.testclient import TestClient
 
 from main import app
 
@@ -23,6 +23,40 @@ def test_analyze_rejects_empty_text() -> None:
     response = client.post("/analyze", json={"text": ""})
 
     assert response.status_code == 422
+
+
+def test_capabilities_reports_sanare_stack() -> None:
+    response = client.get("/capabilities")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["name"] == "Sanare"
+    assert "MCP HTTP" in body["optional_integrations"]
+    assert "NVIDIA NIM" in body["optional_integrations"]
+    assert "analyze_clinical_note" in body["mcp_tools"]
+
+
+def test_nvidia_status_reports_runtime_shape() -> None:
+    response = client.get("/nvidia/status")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["recommended_provider"] == "nvidia"
+    assert "nim_base_url" in body
+
+
+def test_optional_api_key_protects_analysis(monkeypatch) -> None:
+    monkeypatch.setenv("SANARE_API_KEY", "test-secret")
+
+    blocked = client.post("/analyze", json={"text": "54M HTN"})
+    assert blocked.status_code == 401
+
+    allowed = client.post(
+        "/analyze",
+        json={"text": "54M HTN"},
+        headers={"x-sanare-api-key": "test-secret"},
+    )
+    assert allowed.status_code == 200
 
 
 def test_analyze_fhir_returns_bundle() -> None:
@@ -79,3 +113,4 @@ def test_evaluate_endpoint_scores_cases() -> None:
     body = response.json()
     assert body["total_cases"] == 1
     assert body["risk_accuracy"] == 1.0
+

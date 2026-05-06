@@ -1,7 +1,7 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
-from iasis.agent import CONDITION_ALIASES, ClinicalExtractionAgent
-from iasis.schemas import EvaluationRequest, EvaluationResult
+from sanare.agent import CONDITION_ALIASES, ClinicalExtractionAgent
+from sanare.schemas import EvaluationRequest, EvaluationResult
 
 
 class ClinicalEvaluator:
@@ -63,3 +63,4 @@ class ClinicalEvaluator:
                 continue
             violations += 1
         return violations
+
