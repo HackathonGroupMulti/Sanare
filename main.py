@@ -35,7 +35,7 @@ evaluator = ClinicalEvaluator(agent=pipeline.agent)
 
 _mcp = get_mcp()
 if _mcp:
-    app.mount("/mcp", _mcp.http_app())
+    app.mount("/mcp", _mcp.http_app(path="/"))
 
 _static_dir = os.path.join(os.path.dirname(__file__), "static")
 if os.path.isdir(_static_dir):
