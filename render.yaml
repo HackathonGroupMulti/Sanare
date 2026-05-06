@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sanare-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: python scripts/sanare_mcp_server.py --transport http --host 0.0.0.0
+    envVars:
+      - key: LLM_PROVIDER
+        value: nvidia
+      - key: NVIDIA_MODEL
+        value: meta/llama-3.1-8b-instruct
+      - key: NVIDIA_NIM_BASE_URL
+        value: https://integrate.api.nvidia.com/v1
+      - key: SANARE_ENABLE_OTEL
+        value: "0"
+      - key: SANARE_ENABLE_PRESIDIO
+        value: "0"
+      - key: NVIDIA_API_KEY
+        sync: false

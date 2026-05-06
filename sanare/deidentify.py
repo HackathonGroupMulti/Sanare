@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import re
+import os
 from dataclasses import dataclass
 
 from sanare.schemas import DeidentifiedNote
@@ -31,6 +32,8 @@ class ClinicalDeidentifier:
         return self._fallback_redact(text)
 
     def _load_presidio(self) -> tuple[object, object] | None:
+        if os.getenv("SANARE_ENABLE_PRESIDIO") != "1":
+            return None
         try:
             from presidio_analyzer import AnalyzerEngine
             from presidio_anonymizer import AnonymizerEngine

@@ -44,6 +44,15 @@ Start command:
 python scripts/sanare_mcp_server.py --transport http --host 0.0.0.0
 ```
 
+For Render free-tier, use:
+
+```text
+Build Command: pip install -r requirements-render.txt
+Start Command: python scripts/sanare_mcp_server.py --transport http --host 0.0.0.0
+```
+
+Do not use `requirements.txt` on 512MB hosts. It includes optional heavy integrations for local/full infrastructure demos.
+
 The script reads the hosting provider's `PORT` environment variable automatically.
 
 ## 3. Add MCP Server In The Agent UI

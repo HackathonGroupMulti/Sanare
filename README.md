@@ -198,6 +198,15 @@ Detailed agent-builder setup:
 docs/CONNECT_AGENT.md
 ```
 
+Render free-tier deployment:
+
+```text
+Build Command: pip install -r requirements-render.txt
+Start Command: python scripts/sanare_mcp_server.py --transport http --host 0.0.0.0
+```
+
+Use `requirements-render.txt`, not `requirements.txt`, on 512MB hosts.
+
 NVIDIA deployment path:
 
 ```text
