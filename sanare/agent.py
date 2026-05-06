@@ -2,7 +2,7 @@
 
 import json
 import re
-from typing import Any
+from typing import Any, Generator
 
 from pydantic import ValidationError
 
@@ -77,6 +77,17 @@ class ClinicalExtractionAgent:
             return self._validated_or_repaired(note, raw)
         except LLMUnavailableError:
             return self._heuristic_analysis(note)
+
+    def analyze_streaming(self, note: str) -> Generator[str | ClinicalAnalysis, None, None]:
+        """Yield str tokens as the LLM generates, then yield the final ClinicalAnalysis."""
+        try:
+            raw_parts: list[str] = []
+            for token in self.llm_client.stream_tokens(SYSTEM_PROMPT, self._analysis_prompt(note)):
+                raw_parts.append(token)
+                yield token
+            yield self._validated_or_repaired(note, "".join(raw_parts))
+        except (LLMUnavailableError, Exception):
+            yield self._heuristic_analysis(note)
 
     def _analysis_prompt(self, note: str) -> str:
         return f'Clinical text:\n"""{note.strip()}"""'

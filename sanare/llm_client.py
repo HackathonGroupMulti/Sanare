@@ -3,7 +3,7 @@
 import os
 import time
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Generator
 
 
 class LLMUnavailableError(RuntimeError):
@@ -26,6 +26,78 @@ class LLMConfig:
 class LLMClient:
     def __init__(self, config: LLMConfig | None = None) -> None:
         self.config = config or LLMConfig()
+
+    def stream_tokens(self, system_prompt: str, user_prompt: str) -> Generator[str, None, None]:
+        """Yield text chunks from the LLM as they arrive."""
+        provider = self._resolve_provider()
+        if provider in {"openai", "vllm", "nvidia"}:
+            yield from self._openai_stream(system_prompt, user_prompt, provider)
+        elif provider == "gemini":
+            yield from self._gemini_stream(system_prompt, user_prompt)
+        else:
+            raise LLMUnavailableError("No streaming provider configured")
+
+    def _openai_stream(self, system_prompt: str, user_prompt: str, provider: str) -> Generator[str, None, None]:
+        try:
+            from openai import OpenAI
+        except ImportError as exc:
+            raise LLMUnavailableError("Install openai package") from exc
+
+        client_kwargs: dict[str, Any] = {}
+        if provider == "nvidia":
+            client_kwargs["base_url"] = os.getenv("NVIDIA_NIM_BASE_URL", "https://integrate.api.nvidia.com/v1")
+            client_kwargs["api_key"] = os.getenv("NVIDIA_API_KEY", os.getenv("OPENAI_API_KEY", "EMPTY"))
+        elif self.config.base_url:
+            client_kwargs["base_url"] = self.config.base_url
+            client_kwargs["api_key"] = os.getenv("OPENAI_API_KEY", "EMPTY")
+
+        client = OpenAI(**client_kwargs)
+        last_exc: Exception | None = None
+        for attempt in range(_MAX_RETRIES):
+            try:
+                stream = client.chat.completions.create(
+                    model=self.config.model or self._default_model(provider),
+                    temperature=self.config.temperature,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    stream=True,
+                    response_format={"type": "json_object"},
+                )
+                for chunk in stream:
+                    delta = chunk.choices[0].delta.content
+                    if delta:
+                        yield delta
+                return
+            except Exception as exc:
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                if status not in _RETRY_STATUSES:
+                    raise
+                last_exc = exc
+                if attempt < _MAX_RETRIES - 1:
+                    time.sleep(_RETRY_BASE_DELAY * (2**attempt))
+        raise last_exc or LLMUnavailableError("Streaming failed after retries")  # type: ignore[misc]
+
+    def _gemini_stream(self, system_prompt: str, user_prompt: str) -> Generator[str, None, None]:
+        try:
+            import google.generativeai as genai
+        except ImportError as exc:
+            raise LLMUnavailableError("Install google-generativeai package") from exc
+
+        genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+        model = genai.GenerativeModel(
+            self.config.model or "gemini-1.5-flash",
+            system_instruction=system_prompt,
+        )
+        response = model.generate_content(
+            user_prompt,
+            generation_config={"temperature": self.config.temperature, "response_mime_type": "application/json"},
+            stream=True,
+        )
+        for chunk in response:
+            if chunk.text:
+                yield chunk.text
 
     def complete_json(self, system_prompt: str, user_prompt: str) -> str:
         provider = self._resolve_provider()

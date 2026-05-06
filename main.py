@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import queue as stdlib_queue
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, StreamingResponse
@@ -119,47 +120,117 @@ async def analyze_stream(text: str, request: Request) -> StreamingResponse:
     def _sse(payload: dict) -> str:
         return f"data: {json.dumps(payload)}\n\n"
 
+    def _extract_codes(bundle: dict) -> list[dict]:
+        _system_labels = {
+            "http://hl7.org/fhir/sid/icd-10-cm": "ICD-10",
+            "http://www.nlm.nih.gov/research/umls/rxnorm": "RxNorm",
+        }
+        codes = []
+        for entry in bundle.get("entry", []):
+            resource = entry.get("resource", {})
+            rtype = resource.get("resourceType")
+            if rtype in ("Condition", "Observation"):
+                text_val = resource.get("code", {}).get("text", "")
+                for c in resource.get("code", {}).get("coding", []):
+                    codes.append({
+                        "term": text_val,
+                        "system": _system_labels.get(c.get("system", ""), c.get("system", "")),
+                        "code": c.get("code"),
+                        "display": c.get("display"),
+                    })
+            elif rtype == "MedicationStatement":
+                text_val = resource.get("medicationCodeableConcept", {}).get("text", "")
+                for c in resource.get("medicationCodeableConcept", {}).get("coding", []):
+                    codes.append({
+                        "term": text_val,
+                        "system": _system_labels.get(c.get("system", ""), c.get("system", "")),
+                        "code": c.get("code"),
+                        "display": c.get("display"),
+                    })
+        return codes
+
     async def event_gen():
         loop = asyncio.get_event_loop()
 
         yield _sse({"stage": "deidentifying"})
         redacted = await loop.run_in_executor(None, pipeline.deidentifier.redact, text)
-        yield _sse({"stage": "deidentified", "phi_count": len(redacted.phi_entities)})
+        yield _sse({"stage": "deidentified", "phi_entities": redacted.phi_entities})
 
         yield _sse({"stage": "extracting"})
 
-        # Send keep-alive pings while LLM processes so Render's proxy doesn't buffer
-        analysis_future = loop.run_in_executor(None, pipeline.agent.analyze, redacted.text)
-        while not analysis_future.done():
-            yield ": ping\n\n"
-            await asyncio.sleep(0.5)
-        analysis = await analysis_future
+        # Stream tokens from LLM via thread-safe queue
+        token_q: stdlib_queue.Queue = stdlib_queue.Queue()
+
+        def _run_streaming():
+            try:
+                for item in pipeline.agent.analyze_streaming(redacted.text):
+                    token_q.put(("token" if isinstance(item, str) else "result", item))
+            except Exception as exc:
+                token_q.put(("error", str(exc)))
+            finally:
+                token_q.put(("sentinel", None))
+
+        loop.run_in_executor(None, _run_streaming)
+
+        analysis = None
+        while True:
+            try:
+                kind, value = token_q.get_nowait()
+            except stdlib_queue.Empty:
+                yield ": ping\n\n"
+                await asyncio.sleep(0.05)
+                continue
+            if kind == "token":
+                yield _sse({"token": value})
+            elif kind == "result":
+                analysis = value
+            elif kind == "error":
+                yield _sse({"error": value})
+                return
+            elif kind == "sentinel":
+                break
+
+        if analysis is None:
+            yield _sse({"error": "extraction failed"})
+            return
 
         yield _sse({"stage": "extracted"})
 
+        # Build FHIR bundle to get codes
+        bundle = pipeline.fhir_mapper.bundle(str(id(analysis)), analysis)
+        codes = _extract_codes(bundle)
+        if codes:
+            yield _sse({"codes": codes})
+            await asyncio.sleep(0.1)
+
+        # Grounding check — flag terms not found in the original note
+        note_lower = redacted.text.lower()
+
+        def _grounded(term: str) -> bool:
+            import re as _re
+            return bool(_re.search(rf"\b{_re.escape(term.lower())}\b", note_lower))
+
         fields = analysis.model_dump()
-        # Deduplicate: remove bare drug/condition name if a longer form already present
         for list_key in ("conditions", "medications"):
             items = fields.get(list_key) or []
-            cleaned = []
-            for item in items:
-                dominated = any(
-                    other != item and item.lower() in other.lower()
-                    for other in items
-                )
-                if not dominated:
-                    cleaned.append(item)
+            cleaned = [item for item in items if not any(
+                other != item and item.lower() in other.lower() for other in items
+            )]
             fields[list_key] = cleaned
 
         for key, value in fields.items():
-            yield _sse({"field": key, "value": value})
-            await asyncio.sleep(0.4)
+            extra: dict = {}
+            if isinstance(value, list):
+                extra["grounded"] = {item: _grounded(item) for item in value}
+            yield _sse({"field": key, "value": value, **extra})
+            await asyncio.sleep(0.35)
 
         if pipeline.ner is not None:
             yield _sse({"stage": "ner_running"})
             ner_entities = await loop.run_in_executor(None, pipeline._run_ner, redacted.text, analysis)
             yield _sse({"ner_entities": [e.model_dump() for e in ner_entities]})
 
+        yield _sse({"fhir_bundle": bundle})
         yield _sse({"stage": "done"})
 
     return StreamingResponse(

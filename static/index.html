@@ -17,6 +17,7 @@
       --muted: #888;
       --red: #e05252;
       --amber: #e0a832;
+      --blue: #5599ff;
       --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
     }
 
@@ -38,13 +39,7 @@
       gap: 14px;
     }
 
-    .logo {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--green);
-    }
-
+    .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--green); }
     .logo span { color: var(--text); }
 
     .badge {
@@ -56,17 +51,12 @@
       letter-spacing: 1px;
     }
 
-    .version {
-      margin-left: auto;
-      color: var(--muted);
-      font-size: 11px;
-    }
+    .version { margin-left: auto; color: var(--muted); font-size: 11px; }
 
     main {
       flex: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
       overflow: hidden;
     }
 
@@ -105,14 +95,9 @@
     }
 
     textarea:focus { border-color: var(--green-dim); }
-
     textarea::placeholder { color: var(--muted); }
 
-    .examples {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .examples { display: flex; flex-wrap: wrap; gap: 6px; }
 
     .example-btn {
       background: none;
@@ -147,6 +132,20 @@
     button.primary:hover { background: #8fd400; }
     button.primary:disabled { background: var(--green-dim); cursor: not-allowed; }
 
+    button.secondary {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    button.secondary:hover { border-color: var(--blue); color: var(--blue); }
+
     .spinner {
       display: none;
       width: 16px;
@@ -159,12 +158,7 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .stage-bar {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .stage-bar { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 
     .stage-pill {
       font-size: 10px;
@@ -177,8 +171,80 @@
     }
 
     .stage-pill.active { border-color: var(--green); color: var(--green); }
-    .stage-pill.done { border-color: #333; color: #444; background: #111; }
+    .stage-pill.done   { border-color: #333; color: #444; background: #111; }
 
+    /* PHI preview */
+    .phi-preview {
+      background: var(--surface);
+      border: 1px solid #3a1a1a;
+      border-radius: 4px;
+      padding: 10px 14px;
+      animation: fadeUp 0.25s ease;
+    }
+
+    .phi-tag {
+      display: inline-block;
+      background: #2a1010;
+      border: 1px solid #5a2020;
+      color: var(--red);
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 2px;
+      margin: 2px 3px 2px 0;
+    }
+
+    /* Typewriter */
+    .typewriter-card {
+      background: var(--surface);
+      border: 1px solid var(--green-dim);
+      border-radius: 4px;
+      padding: 12px 14px;
+      animation: fadeUp 0.2s ease;
+    }
+
+    .typewriter-label {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .typewriter-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .typewriter-text {
+      color: #aaa;
+      font-size: 11px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 160px;
+      overflow: hidden;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 7px;
+      height: 13px;
+      background: var(--green);
+      margin-left: 1px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* Field cards */
     .field-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -197,12 +263,16 @@
       letter-spacing: 1.2px;
       color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .field-value { color: var(--text); line-height: 1.6; }
 
     .tag-list { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .tag-group { display: flex; flex-direction: column; gap: 4px; }
+
+    .tag-row { display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap; }
 
     .tag {
       background: #1e1e1e;
@@ -210,7 +280,32 @@
       padding: 2px 9px;
       border-radius: 3px;
       font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
+
+    .tag.ungrounded { border-color: #5a3a00; color: var(--amber); }
+
+    .ground-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ground-dot.ok  { background: var(--green); }
+    .ground-dot.warn { background: var(--amber); }
+
+    .code-chip {
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 2px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .code-chip.icd { background: #0d1320; color: var(--blue); border: 1px solid #1a3060; }
+    .code-chip.rx  { background: #1a0d20; color: #cc77ff; border: 1px solid #4a1a60; }
 
     .risk-badge {
       display: inline-block;
@@ -222,12 +317,11 @@
       text-transform: uppercase;
     }
 
-    .risk-low    { background: #0d1f0d; color: var(--green); border: 1px solid var(--green-dim); }
+    .risk-low      { background: #0d1f0d; color: var(--green); border: 1px solid var(--green-dim); }
     .risk-moderate { background: #1f180d; color: var(--amber); border: 1px solid #7a5a00; }
-    .risk-high   { background: #1f0d0d; color: var(--red);   border: 1px solid #7a0000; }
+    .risk-high     { background: #1f0d0d; color: var(--red);   border: 1px solid #7a0000; }
 
-    .ner-section { margin-top: 8px; }
-
+    /* NER */
     .ner-entity {
       display: flex;
       align-items: center;
@@ -238,7 +332,6 @@
     }
 
     .ner-entity:last-child { border-bottom: none; }
-
     .ner-text { flex: 1; }
 
     .ner-label {
@@ -255,13 +348,12 @@
       letter-spacing: 0.5px;
     }
 
-    .ner-source.ml     { background: #0d1320; color: #5599ff; border: 1px solid #1a3060; }
+    .ner-source.ml     { background: #0d1320; color: var(--blue); border: 1px solid #1a3060; }
     .ner-source.llm    { background: #1a0d20; color: #cc77ff; border: 1px solid #4a1a60; }
     .ner-source.hybrid { background: #0d1a0d; color: var(--green); border: 1px solid var(--green-dim); }
 
     .confidence-bar-wrap {
-      width: 80px;
-      height: 4px;
+      width: 80px; height: 4px;
       background: #1e1e1e;
       border-radius: 2px;
       overflow: hidden;
@@ -279,6 +371,70 @@
       text-align: right;
       color: var(--muted);
       font-size: 11px;
+    }
+
+    /* FHIR modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 90vw;
+      max-width: 780px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: var(--text); }
+
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+    }
+
+    .fhir-json {
+      font-size: 11px;
+      line-height: 1.6;
+      color: #aaa;
+      white-space: pre;
+      overflow-x: auto;
     }
 
     .error-msg {
@@ -326,6 +482,7 @@
     <div class="btn-row">
       <button class="primary" id="run-btn" onclick="runStream()">Analyze</button>
       <div class="spinner" id="spinner"></div>
+      <button class="secondary" id="fhir-btn" style="display:none" onclick="openFhir()">View FHIR Bundle</button>
     </div>
 
     <div class="stage-bar" id="stage-bar" style="display:none">
@@ -334,6 +491,8 @@
       <div class="stage-pill" id="pill-ner_running">NER</div>
       <div class="stage-pill" id="pill-done">complete</div>
     </div>
+
+    <div id="phi-area"></div>
   </div>
 
   <div class="panel panel-right" id="output">
@@ -345,17 +504,48 @@
   </div>
 </main>
 
+<!-- FHIR modal -->
+<div class="modal-overlay" id="fhir-modal" onclick="closeFhirOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">FHIR R4 Bundle</span>
+      <button class="modal-close" onclick="closeFhir()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <pre class="fhir-json" id="fhir-json"></pre>
+    </div>
+  </div>
+</div>
+
 <script>
   const EXAMPLES = [
     "54M HTN chest pain on lisinopril SOB exertion",
-    "65F diabetes on metformin and amlodipine requesting follow-up",
-    "72M altered mental status, suspected stroke, BP 210/120, transferred to ED",
+    "65F type 2 diabetes on metformin 1000mg and amlodipine 5mg, requesting medication refill",
+    "72M sudden onset severe headache worst of life, neck stiffness, BP 210/120, transferred to ED",
     "28F medication refill, allergic rhinitis, stable on loratadine",
   ];
+
+  let _fhirBundle = null;
 
   function setExample(i) {
     document.getElementById("note").value = EXAMPLES[i];
   }
+
+  function openFhir() {
+    if (!_fhirBundle) return;
+    document.getElementById("fhir-json").textContent = JSON.stringify(_fhirBundle, null, 2);
+    document.getElementById("fhir-modal").classList.add("open");
+  }
+
+  function closeFhir() {
+    document.getElementById("fhir-modal").classList.remove("open");
+  }
+
+  function closeFhirOnOverlay(e) {
+    if (e.target === document.getElementById("fhir-modal")) closeFhir();
+  }
+
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeFhir(); });
 
   const STAGE_ORDER = ["deidentifying", "extracting", "ner_running", "done"];
 
@@ -367,7 +557,49 @@
     if (state === "done")   el.classList.add("done");
   }
 
-  function fieldCard(key, value) {
+  // Map term → codes from the codes event
+  let _codesMap = {};
+
+  function getCodesForTerm(term) {
+    return _codesMap[term.toLowerCase()] || [];
+  }
+
+  function codeChip(code, system) {
+    const span = document.createElement("span");
+    span.className = `code-chip ${system === "ICD-10" ? "icd" : "rx"}`;
+    span.textContent = `${system} ${code}`;
+    return span;
+  }
+
+  function tagList(items, grounded) {
+    const wrap = document.createElement("div");
+    wrap.className = "tag-group";
+    (items || []).forEach(item => {
+      const row = document.createElement("div");
+      row.className = "tag-row";
+
+      const tag = document.createElement("span");
+      const isGrounded = grounded ? grounded[item] !== false : true;
+      tag.className = `tag${isGrounded ? "" : " ungrounded"}`;
+
+      const dot = document.createElement("span");
+      dot.className = `ground-dot ${isGrounded ? "ok" : "warn"}`;
+      dot.title = isGrounded ? "Grounded in note" : "Not directly found in note";
+      tag.appendChild(dot);
+      tag.appendChild(document.createTextNode(item));
+      row.appendChild(tag);
+
+      const codes = getCodesForTerm(item);
+      codes.forEach(c => {
+        row.appendChild(codeChip(c.code, c.system));
+      });
+
+      wrap.appendChild(row);
+    });
+    return wrap;
+  }
+
+  function fieldCard(key, value, grounded) {
     const card = document.createElement("div");
     card.className = "field-card";
     card.id = `field-${key}`;
@@ -386,15 +618,7 @@
       badge.textContent = value;
       val.appendChild(badge);
     } else if (Array.isArray(value)) {
-      const list = document.createElement("div");
-      list.className = "tag-list";
-      value.forEach(item => {
-        const tag = document.createElement("span");
-        tag.className = "tag";
-        tag.textContent = item;
-        list.appendChild(tag);
-      });
-      val.appendChild(list);
+      val.appendChild(tagList(value, grounded));
     } else {
       val.textContent = value;
     }
@@ -405,9 +629,8 @@
 
   function nerSection(entities) {
     if (!entities || entities.length === 0) return null;
-
     const wrap = document.createElement("div");
-    wrap.className = "field-card ner-section";
+    wrap.className = "field-card";
 
     const label = document.createElement("div");
     label.className = "field-key";
@@ -449,6 +672,56 @@
   }
 
   let activeSource = null;
+  let _typewriterEl = null;
+  let _typewriterText = "";
+
+  function getOrCreateTypewriter() {
+    if (!_typewriterEl) {
+      const output = document.getElementById("output");
+      const card = document.createElement("div");
+      card.className = "typewriter-card";
+      card.id = "typewriter";
+
+      const labelRow = document.createElement("div");
+      labelRow.className = "typewriter-label";
+      const dot = document.createElement("div");
+      dot.className = "typewriter-dot";
+      labelRow.appendChild(dot);
+      labelRow.appendChild(document.createTextNode("extracting"));
+      card.appendChild(labelRow);
+
+      const textEl = document.createElement("div");
+      textEl.className = "typewriter-text";
+      const cursor = document.createElement("span");
+      cursor.className = "cursor";
+      textEl.appendChild(cursor);
+      card.appendChild(textEl);
+
+      output.appendChild(card);
+      _typewriterEl = textEl;
+      _typewriterText = "";
+    }
+    return _typewriterEl;
+  }
+
+  function appendToken(token) {
+    const el = getOrCreateTypewriter();
+    _typewriterText += token;
+    // Keep last ~300 chars visible
+    const display = _typewriterText.length > 300
+      ? "..." + _typewriterText.slice(-280)
+      : _typewriterText;
+    el.textContent = display;
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    el.appendChild(cursor);
+  }
+
+  function removeTypewriter() {
+    const el = document.getElementById("typewriter");
+    if (el) el.remove();
+    _typewriterEl = null;
+  }
 
   async function runStream() {
     const text = document.getElementById("note").value.trim();
@@ -456,15 +729,23 @@
 
     if (activeSource) { activeSource.close(); activeSource = null; }
 
+    _codesMap = {};
+    _fhirBundle = null;
+    _typewriterEl = null;
+
     const btn = document.getElementById("run-btn");
     const spinner = document.getElementById("spinner");
     const stageBar = document.getElementById("stage-bar");
     const output = document.getElementById("output");
+    const phiArea = document.getElementById("phi-area");
+    const fhirBtn = document.getElementById("fhir-btn");
 
     btn.disabled = true;
     spinner.style.display = "block";
     stageBar.style.display = "flex";
+    fhirBtn.style.display = "none";
     output.innerHTML = "";
+    phiArea.innerHTML = "";
 
     STAGE_ORDER.forEach(s => setPill(s, ""));
 
@@ -480,19 +761,58 @@
         if (prev) setPill(prev, "done");
         setPill(data.stage, "active");
 
+        if (data.stage === "extracted") {
+          removeTypewriter();
+        }
+
         if (data.stage === "done") {
           STAGE_ORDER.forEach(s => setPill(s, "done"));
           btn.disabled = false;
           spinner.style.display = "none";
           source.close();
           activeSource = null;
+          if (_fhirBundle) fhirBtn.style.display = "block";
         }
+      }
+
+      if (data.phi_entities && data.phi_entities.length > 0) {
+        const wrap = document.createElement("div");
+        wrap.className = "phi-preview";
+        const lbl = document.createElement("div");
+        lbl.className = "panel-label";
+        lbl.style.marginBottom = "6px";
+        lbl.textContent = "PHI redacted";
+        wrap.appendChild(lbl);
+        data.phi_entities.forEach(entity => {
+          const tag = document.createElement("span");
+          tag.className = "phi-tag";
+          tag.textContent = entity;
+          wrap.appendChild(tag);
+        });
+        phiArea.innerHTML = "";
+        phiArea.appendChild(wrap);
+      }
+
+      if (data.token !== undefined) {
+        appendToken(data.token);
+      }
+
+      if (data.codes) {
+        data.codes.forEach(c => {
+          const key = (c.term || "").toLowerCase();
+          if (!_codesMap[key]) _codesMap[key] = [];
+          _codesMap[key].push(c);
+        });
+      }
+
+      if (data.fhir_bundle) {
+        _fhirBundle = data.fhir_bundle;
       }
 
       if (data.field) {
         const existing = document.getElementById(`field-${data.field}`);
         if (existing) existing.remove();
-        output.appendChild(fieldCard(data.field, data.value));
+        output.appendChild(fieldCard(data.field, data.value, data.grounded));
       }
 
       if (data.ner_entities) {
@@ -506,6 +826,7 @@
       }
 
       if (data.error) {
+        removeTypewriter();
         const msg = document.createElement("div");
         msg.className = "error-msg";
         msg.textContent = `Error: ${data.error}`;
@@ -518,6 +839,7 @@
     };
 
     source.onerror = () => {
+      removeTypewriter();
       btn.disabled = false;
       spinner.style.display = "none";
       source.close();
