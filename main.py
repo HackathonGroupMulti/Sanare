@@ -28,14 +28,20 @@ VERSION = "0.3.0"
 
 load_environment()
 
-app = FastAPI(title="Sanare Clinical Agent API", version=VERSION)
+_mcp = get_mcp()
+_mcp_asgi = _mcp.http_app(path="/") if _mcp else None
+
+app = FastAPI(
+    title="Sanare Clinical Agent API",
+    version=VERSION,
+    lifespan=_mcp_asgi.lifespan if _mcp_asgi else None,
+)
 app.add_middleware(OptionalApiKeyMiddleware)
 pipeline = get_pipeline()
 evaluator = ClinicalEvaluator(agent=pipeline.agent)
 
-_mcp = get_mcp()
-if _mcp:
-    app.mount("/mcp", _mcp.http_app(path="/"))
+if _mcp_asgi:
+    app.mount("/mcp", _mcp_asgi)
 
 _static_dir = os.path.join(os.path.dirname(__file__), "static")
 if os.path.isdir(_static_dir):
