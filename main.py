@@ -127,13 +127,33 @@ async def analyze_stream(text: str, request: Request) -> StreamingResponse:
         yield _sse({"stage": "deidentified", "phi_count": len(redacted.phi_entities)})
 
         yield _sse({"stage": "extracting"})
-        analysis = await loop.run_in_executor(None, pipeline.agent.analyze, redacted.text)
+
+        # Send keep-alive pings while LLM processes so Render's proxy doesn't buffer
+        analysis_future = loop.run_in_executor(None, pipeline.agent.analyze, redacted.text)
+        while not analysis_future.done():
+            yield ": ping\n\n"
+            await asyncio.sleep(0.5)
+        analysis = await analysis_future
 
         yield _sse({"stage": "extracted"})
 
-        for key, value in analysis.model_dump().items():
+        fields = analysis.model_dump()
+        # Deduplicate: remove bare drug/condition name if a longer form already present
+        for list_key in ("conditions", "medications"):
+            items = fields.get(list_key) or []
+            cleaned = []
+            for item in items:
+                dominated = any(
+                    other != item and item.lower() in other.lower()
+                    for other in items
+                )
+                if not dominated:
+                    cleaned.append(item)
+            fields[list_key] = cleaned
+
+        for key, value in fields.items():
             yield _sse({"field": key, "value": value})
-            await asyncio.sleep(0.07)
+            await asyncio.sleep(0.4)
 
         if pipeline.ner is not None:
             yield _sse({"stage": "ner_running"})
