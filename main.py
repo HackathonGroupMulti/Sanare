@@ -8,8 +8,8 @@ from fastapi.staticfiles import StaticFiles
 
 from sanare.config import load_environment
 from sanare.evaluation import ClinicalEvaluator
+from sanare.mcp_app import get_mcp, get_pipeline
 from sanare.nvidia import nvidia_runtime_report
-from sanare.pipeline import ClinicalPipeline
 from sanare.security import OptionalApiKeyMiddleware
 from sanare.schemas import (
     AnalyzeEnvelope,
@@ -29,8 +29,12 @@ load_environment()
 
 app = FastAPI(title="Sanare Clinical Agent API", version=VERSION)
 app.add_middleware(OptionalApiKeyMiddleware)
-pipeline = ClinicalPipeline()
+pipeline = get_pipeline()
 evaluator = ClinicalEvaluator(agent=pipeline.agent)
+
+_mcp = get_mcp()
+if _mcp:
+    app.mount("/mcp", _mcp.http_app())
 
 _static_dir = os.path.join(os.path.dirname(__file__), "static")
 if os.path.isdir(_static_dir):

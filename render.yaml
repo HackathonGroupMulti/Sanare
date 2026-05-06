@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements-render.txt
-    startCommand: python scripts/sanare_mcp_server.py --transport http --host 0.0.0.0
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: LLM_PROVIDER
         value: nvidia
