@@ -1,10 +1,18 @@
 from __future__ import annotations
 
+import types
 from typing import Any
 
 from sanare.pipeline import ClinicalPipeline
 from sanare.schemas import EvaluationRequest
 from sanare.sharp import SharpContext, enrich_note_with_context, fetch_patient_context
+
+_PO_FHIR_EXTENSION = "ai.promptopinion/fhir-context"
+_PO_SCOPES = [
+    {"name": "patient/Patient.rs", "required": True},
+    {"name": "patient/Condition.rs"},
+    {"name": "patient/MedicationStatement.rs"},
+]
 
 try:
     from fastmcp import FastMCP
@@ -17,14 +25,48 @@ try:
             "link results to a live EHR session."
         ),
     )
+
+    # Declare Prompt Opinion FHIR extension in MCP capabilities
+    _orig_caps = _mcp._mcp_server.get_capabilities
+
+    def _patched_caps(self, notification_options, experimental_capabilities):
+        caps = _orig_caps(notification_options, experimental_capabilities)
+        existing = getattr(caps, "extensions", None) or {}
+        caps.extensions = {**existing, _PO_FHIR_EXTENSION: {"scopes": _PO_SCOPES}}
+        return caps
+
+    _mcp._mcp_server.get_capabilities = types.MethodType(
+        _patched_caps, _mcp._mcp_server
+    )
+
 except ImportError:
     _mcp = None
 
 _pipeline = ClinicalPipeline()
 
 
+def _sharp_from_headers() -> SharpContext:
+    """Read Prompt Opinion's FHIR context headers injected at call time."""
+    try:
+        from fastmcp.server.http import _current_http_request
+        request = _current_http_request.get()
+        if request is None:
+            return SharpContext()
+        h = request.headers
+        return SharpContext(
+            patient_id=h.get("x-patient-id"),
+            fhir_base_url=h.get("x-fhir-server-url"),
+            fhir_access_token=h.get("x-fhir-access-token"),
+        )
+    except Exception:
+        return SharpContext()
+
+
 def _parse_sharp(sharp_context: dict[str, Any] | None) -> SharpContext:
-    return SharpContext.model_validate(sharp_context) if sharp_context else SharpContext()
+    """Prefer explicit sharp_context param; fall back to PO FHIR headers."""
+    if sharp_context:
+        return SharpContext.model_validate(sharp_context)
+    return _sharp_from_headers()
 
 
 def _sharp_envelope(result: dict[str, Any], ctx: SharpContext) -> dict[str, Any]:
@@ -56,9 +98,9 @@ if _mcp:
     ) -> dict[str, Any]:
         """Extract schema-valid clinical JSON from an unstructured note.
 
-        Accepts an optional SHARP context dict with patient_id, fhir_base_url,
-        fhir_access_token, encounter_id, scope, and user. When present, fetches
-        existing FHIR conditions and medications to enrich the extraction.
+        SHARP/FHIR context is read automatically from Prompt Opinion headers
+        (X-Patient-ID, X-FHIR-Server-URL, X-FHIR-Access-Token) or can be
+        passed explicitly via the sharp_context parameter.
         """
         ctx = _parse_sharp(sharp_context)
         patient_ctx = fetch_patient_context(ctx)
@@ -75,8 +117,9 @@ if _mcp:
     ) -> dict[str, Any]:
         """Extract clinical facts and return a FHIR R4 Bundle.
 
-        When SHARP context is provided the Bundle patient resource is linked
-        to the real patient_id from the EHR session.
+        SHARP/FHIR context is read automatically from Prompt Opinion headers
+        or passed explicitly. The Bundle patient resource is linked to the
+        real patient_id when context is available.
         """
         ctx = _parse_sharp(sharp_context)
         patient_ctx = fetch_patient_context(ctx)
@@ -87,12 +130,11 @@ if _mcp:
         return _sharp_envelope(result, ctx)
 
     @_mcp.tool
-    def fetch_patient_summary(sharp_context: dict[str, Any]) -> dict[str, Any]:
+    def fetch_patient_summary(sharp_context: dict[str, Any] | None = None) -> dict[str, Any]:
         """Fetch a patient's existing conditions and medications from a FHIR server.
 
-        Requires sharp_context with patient_id, fhir_base_url, and fhir_access_token.
-        Returns existing_conditions, existing_medications, and echoes the sharp_context
-        for downstream agent chaining.
+        FHIR context is read automatically from Prompt Opinion headers or
+        passed explicitly via sharp_context.
         """
         ctx = _parse_sharp(sharp_context)
         patient_ctx = fetch_patient_context(ctx)
