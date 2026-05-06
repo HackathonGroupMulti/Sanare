@@ -1,0 +1,2408 @@
+{
+  "_note": "MTSamples-derived eval cases. Fields prefixed with _ are metadata. Set _review_status='verified' after manually checking each expected output. Remove _ fields before using as EvaluationRequest input.",
+  "cases": [
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " 2-D Echocardiogram - 1 ",
+      "_review_status": "pending",
+      "text": "2-D M-MODE: , ,1. Left atrial enlargement with left atrial diameter of 4.7 cm.,2. Normal size right and left ventricle.,3. Normal LV systolic function with left ventricular ejection fraction of 51%.,4. Normal LV diastolic function.,5. No pericardial effusion.,6. Normal morphology of aortic valve, mitral valve, tricuspid valve, and pulmonary valve.,7. PA systolic pressure is 36 mmHg.,DOPPLER: , ,1.",
+      "expected": {
+        "patient_summary": "patient with left atrial enlargement, normal size right and left ventricle, normal lv systolic function, normal lv diastolic function, no pericardial effusion, normal morphology of aortic valve, mitral valve, tricuspid valve, and pulmonary valve",
+        "conditions": [
+          "left atrial enlargement",
+          "normal size right and left ventricle",
+          "normal lv systolic function",
+          "normal lv diastolic function",
+          "no pericardial effusion",
+          "normal morphology of aortic valve, mitral valve, tricuspid valve, and pulmonary valve"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " 2-D Echocardiogram - 2 ",
+      "_review_status": "pending",
+      "text": "1. The left ventricular cavity size and wall thickness appear normal. The wall motion and left ventricular systolic function appears hyperdynamic with estimated ejection fraction of 70% to 75%. There is near-cavity obliteration seen. There also appears to be increased left ventricular outflow tract gradient at the mid cavity level consistent with hyperdynamic left ventricular systolic function.",
+      "expected": {
+        "patient_summary": "patient with hyperdynamic left ventricular systolic function, increased left ventricular outflow tract gradient",
+        "conditions": [
+          "hyperdynamic left ventricular systolic function",
+          "increased left ventricular outflow tract gradient"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " 2-D Echocardiogram - 3 ",
+      "_review_status": "pending",
+      "text": "2-D ECHOCARDIOGRAM,Multiple views of the heart and great vessels reveal normal intracardiac and great vessel relationships. Cardiac function is normal. There is no significant chamber enlargement or hypertrophy. There is no pericardial effusion or vegetations seen. Doppler interrogation, including color flow imaging, reveals systemic venous return to the right atrium with normal tricuspid inflow.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " 2-D Echocardiogram - 4 ",
+      "_review_status": "pending",
+      "text": "DESCRIPTION:,1. Normal cardiac chambers size.,2. Normal left ventricular size.,3. Normal LV systolic function. Ejection fraction estimated around 60%.,4. Aortic valve seen with good motion.,5. Mitral valve seen with good motion.,6. Tricuspid valve seen with good motion.,7. No pericardial effusion or intracardiac masses.,DOPPLER:,1. Trace mitral regurgitation.,2.",
+      "expected": {
+        "patient_summary": "patient with normal cardiac chambers size, normal left ventricular size, normal lv systolic function, aortic valve seen with good motion, mitral valve seen with good motion, tricuspid valve seen with good motion, no pericardial effusion or intracardiac masses, trace mitral regurgitation",
+        "conditions": [
+          "normal cardiac chambers size",
+          "normal left ventricular size",
+          "normal lv systolic function",
+          "aortic valve seen with good motion",
+          "mitral valve seen with good motion",
+          "tricuspid valve seen with good motion",
+          "no pericardial effusion or intracardiac masses",
+          "trace mitral regurgitation"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " 2-D Doppler ",
+      "_review_status": "pending",
+      "text": "2-D STUDY,1. Mild aortic stenosis, widely calcified, minimally restricted.,2. Mild left ventricular hypertrophy but normal systolic function.,3. Moderate biatrial enlargement.,4. Normal right ventricle.,5. Normal appearance of the tricuspid and mitral valves.,6. Normal left ventricle and left ventricular systolic function.,DOPPLER,1.",
+      "expected": {
+        "patient_summary": "patient with mild aortic stenosis, mild left ventricular hypertrophy, moderate biatrial enlargement, normal right ventricle, normal appearance of the tricuspid and mitral valves, normal left ventricle and left ventricular systolic function",
+        "conditions": [
+          "mild aortic stenosis",
+          "mild left ventricular hypertrophy",
+          "moderate biatrial enlargement",
+          "normal right ventricle",
+          "normal appearance of the tricuspid and mitral valves",
+          "normal left ventricle and left ventricular systolic function"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Neurology",
+      "_sample_name": " Moyamoya Disease ",
+      "_review_status": "pending",
+      "text": "CC:, Confusion and slurred speech.,HX , (primarily obtained from boyfriend): This 31 y/o RHF experienced a \"flu-like illness 6-8 weeks prior to presentation. 3-4 weeks prior to presentation, she was found \"passed out\" in bed, and when awoken appeared confused, and lethargic. She apparently recovered within 24 hours.",
+      "expected": {
+        "patient_summary": "patient with flu-like illness, confusion",
+        "conditions": [
+          "flu-like illness",
+          "confusion"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "Cardiovascular / Pulmonary",
+      "_sample_name": " Tracheostomy ",
+      "_review_status": "pending",
+      "text": "PREOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea.,POSTOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea.,OPERATION PERFORMED,Neck exploration; tracheostomy; urgent flexible bronchoscopy via tracheostomy site; removal of foreign body, tracheal metallic st",
+      "expected": {
+        "patient_summary": "patient with airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea",
+        "conditions": [
+          "airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "General Medicine",
+      "_sample_name": " Airway Compromise & Foreign Body - ER Visit ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  The patient is a 17-year-old female, who presents to the emergency room with foreign body and airway compromise and was taken to the operating room.",
+      "expected": {
+        "patient_summary": "patient with foreign body, airway compromise",
+        "conditions": [
+          "foreign body",
+          "airway compromise"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Uterine Papillary Serous Carcinoma ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  The patient is a 67-year-old white female with a history of uterine papillary serous carcinoma who is status post 6 cycles of carboplatin and Taxol, is here today for followup. Her last cycle of chemotherapy was finished on 01/18/08, and she complains about some numbness in her right upper extremity.",
+      "expected": {
+        "patient_summary": "patient with uterine papillary serous carcinoma and on carboplatin, taxol",
+        "conditions": [
+          "uterine papillary serous carcinoma"
+        ],
+        "medications": [
+          "carboplatin",
+          "taxol"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Wound Check - Status Post APR ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  Ms. Connor is a 50-year-old female who returns to clinic for a wound check. The patient underwent an APR secondary to refractory ulcerative colitis. Subsequently, she developed a wound infection, which has since healed. On our most recent visit to our clinic, she has her perineal stitches removed and presents today for followup of her perineal wound.",
+      "expected": {
+        "patient_summary": "patient with ulcerative colitis, wound infection",
+        "conditions": [
+          "ulcerative colitis",
+          "wound infection"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Weight Loss on Phentermine ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  She is here for a followup on her weight loss on phentermine. She has gained another pound since she was here last. We talked at length about the continued plateau she has had with her weight. She gained a pound the month before and really has not been able to get her weight any farther down than she had when her lowest level was 136. She is frustrated with this as well.",
+      "expected": {
+        "patient_summary": "patient on phentermine",
+        "conditions": [],
+        "medications": [
+          "phentermine"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Wasp Sting - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  He is a 29-year-old white male who is a patient of Dr. XYZ and he comes in today complaining that he was stung by a Yellow Jacket Wasp yesterday and now has a lot of swelling in his right hand and right arm. He says that he has been stung by wasps before and had similar reactions.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Tethered Cord Evaluation ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , The patient referred by Dr. X for evaluation of her possible tethered cord.,HISTORY OF PRESENT ILLNESS:,  Briefly, she is a 14-year-old right handed female who is in 9th grade, who underwent a lipomyomeningocele repair at 3 days of age and then again at 3-1/2 years of age. The last surgery was in 03/95.",
+      "expected": {
+        "patient_summary": "patient with tethered cord, lipomyomeningocele",
+        "conditions": [
+          "tethered cord",
+          "lipomyomeningocele"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " URI - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  Mom brings patient in today because of sore throat starting last night. Eyes have been very puffy. He has taken some Benadryl when all of this congestion started but with a sudden onset just yesterday. He has had low-grade fever and just felt very run down, appearing very tired. He is still eating and drinking well, and his voice has been hoarse but no coughing.",
+      "expected": {
+        "patient_summary": "patient with sore throat, low-grade fever and on benadryl",
+        "conditions": [
+          "sore throat",
+          "low-grade fever"
+        ],
+        "medications": [
+          "benadryl"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Total Abdominal Hysterectomy - Followup ",
+      "_review_status": "pending",
+      "text": "POSTOPERATIVE DAY #1, TOTAL ABDOMINAL HYSTERECTOMY,SUBJECTIVE: , The patient is alert and oriented x3 and sitting up in bed. The patient has been ambulating without difficulty. The patient is still NPO. The patient denies any new symptomatology from  6/10/2009. The patient has complaints of incisional tenderness.",
+      "expected": {
+        "patient_summary": "patient with incisional tenderness",
+        "conditions": [
+          "incisional tenderness"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Three-Week Postpartum Checkup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  The patient comes for three-week postpartum checkup, complaining of allergies.,HISTORY OF PRESENT ILLNESS:,  She is doing well postpartum. She has had no headache. She is breastfeeding and feels like her milk is adequate. She has not had much bleeding.",
+      "expected": {
+        "patient_summary": "patient with allergies",
+        "conditions": [
+          "allergies"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Thrombocytosis Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  Essential thrombocytosis.,HISTORY OF PRESENT ILLNESS: , This is an extremely pleasant 64-year-old gentleman who I am following for essential thrombocytosis. He was first diagnosed when he first saw a hematologist on 07/09/07. At that time, his platelet count was 1,240,000. He was initially started on Hydrea 1000 mg q.d.",
+      "expected": {
+        "patient_summary": "patient with essential thrombocytosis",
+        "conditions": [
+          "essential thrombocytosis"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Thrombocytopenia - SOAP Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , I am following the patient today for immune thrombocytopenia. Her platelets fell to 10 on 01/09/07 and shortly after learning of that result, I increased her prednisone to 60 mg a day. Repeat on 01/16/07 revealed platelets up at 43. No bleeding problems have been noted.",
+      "expected": {
+        "patient_summary": "patient with immune thrombocytopenia and on prednisone",
+        "conditions": [
+          "immune thrombocytopenia"
+        ],
+        "medications": [
+          "prednisone"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Urinary Frequency & Urgency - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:  ,This is a 55-year-old female with a history of stroke, who presents today for followup of frequency and urgency with urge incontinence. This has been progressively worsening, and previously on VESIcare with no improvement. She continues to take Enablex 50 mg and has not noted any improvement of her symptoms. The nursing home did not do a voiding diary.",
+      "expected": {
+        "patient_summary": "patient with stroke, urge incontinence and on vesicare, enablex 50 mg",
+        "conditions": [
+          "stroke",
+          "urge incontinence"
+        ],
+        "medications": [
+          "vesicare",
+          "enablex 50 mg"
+        ],
+        "risk_level": "high",
+        "next_step": "neurology referral"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Urinary Retention - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient presents today for followup. No dysuria, gross hematuria, fever, chills. She continues to have urinary incontinence, especially while changing from sitting to standing position, as well as urge incontinence. She is voiding daytime every 1 hour in the morning especially after taking Lasix, which tapers off in the afternoon, nocturia time 0. No incontinence.",
+      "expected": {
+        "patient_summary": "patient with urinary incontinence and on lasix",
+        "conditions": [
+          "urinary incontinence"
+        ],
+        "medications": [
+          "lasix"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Substance Abuse ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , This patient presents to the office today with his mom for checkup. He used to live in the city. He used to go to college down in the city. He got addicted to drugs. He decided it would be a good idea to get away from the \"bad crowd\" and come up and live with his mom. He has a history of doing heroin. He was injecting into his vein. He was seeing a physician in the city.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Shortness of Breath ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , The patient is admitted for shortness of breath, continues to do fairly well. The patient has chronic atrial fibrillation, on anticoagulation, INR of 1.72. The patient did undergo echocardiogram, which shows aortic stenosis, severe. The patient does have an outside cardiologist.",
+      "expected": {
+        "patient_summary": "patient with atrial fibrillation, aortic stenosis, shortness of breath and on anticoagulation",
+        "conditions": [
+          "atrial fibrillation",
+          "aortic stenosis",
+          "shortness of breath"
+        ],
+        "medications": [
+          "anticoagulation"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Cholecystitis ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , She is a 79-year-old female who came in with acute cholecystitis and underwent attempted laparoscopic cholecystectomy 8 days ago. The patient has required conversion to an open procedure due to difficult anatomy. Her postoperative course has been lengthened due to a prolonged ileus, which resolved with tetracycline and Reglan. The patient is starting to improve, gain more strength.",
+      "expected": {
+        "patient_summary": "patient with acute cholecystitis and on tetracycline, reglan",
+        "conditions": [
+          "acute cholecystitis"
+        ],
+        "medications": [
+          "tetracycline",
+          "reglan"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Lung Mass ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is admitted for lung mass and also pleural effusion. The patient had a chest tube placement, which has been taken out. The patient has chronic atrial fibrillation, on anticoagulation. The patient is doing fairly well. This afternoon, she called me because heart rate was in the range of 120 to 140. The patient is lying down.",
+      "expected": {
+        "patient_summary": "patient with lung mass, pleural effusion, chronic atrial fibrillation and on anticoagulation",
+        "conditions": [
+          "lung mass",
+          "pleural effusion",
+          "chronic atrial fibrillation"
+        ],
+        "medications": [
+          "anticoagulation"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Numbness & Tingling ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , This patient presents to the office today because of some problems with her right hand. It has been going tingling and getting numb periodically over several weeks. She just recently moved her keyboard down at work. She is hoping that will help. She is worried about carpal tunnel. She does a lot of repetitive type activities. It is worse at night.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " SOAP - Temporal Mass ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , The patient is a 55-year-old African-American male that was last seen in clinic on 07/29/2008 with diagnosis of new onset seizures and an MRI scan, which demonstrated right contrast-enhancing temporal mass. Given the characteristics of this mass and his new onset seizures, it is significantly concerning for a high-grade glioma.",
+      "expected": {
+        "patient_summary": "patient with new onset seizures, high-grade glioma",
+        "conditions": [
+          "new onset seizures",
+          "high-grade glioma"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Sleep Study Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  This 48-year-old woman returns in followup after a full-night sleep study performed to evaluate her for daytime fatigue and insomnia.,HISTORY OF PRESENT ILLNESS: , The patient presented initially to the Pulmonary Clinic with dyspnea on minimal exertion. At that time, she was evaluated and found to have evidence for sleep disruption and daytime fatigue.",
+      "expected": {
+        "patient_summary": "patient with shortness of breath, insomnia, daytime fatigue, sleep disruption",
+        "conditions": [
+          "shortness of breath",
+          "insomnia",
+          "daytime fatigue",
+          "sleep disruption"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Shortness Of Breath - Progress Note ",
+      "_review_status": "pending",
+      "text": "She was evaluated this a.m. and was without any significant clinical change. Her white count has been improving and down to 12,000. A chest x-ray obtained today showed some bilateral infiltrates, but no acute cardiopulmonary change.",
+      "expected": {
+        "patient_summary": "patient with bilateral infiltrates",
+        "conditions": [
+          "bilateral infiltrates"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Sleep Apnea ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Mr. ABC is a 30-year-old man who returns in followup of his still moderate-to-severe sleep apnea. He returns today to review his response to CPAP.,HISTORY OF PRESENT ILLNESS: , The patient initially presented with loud obnoxious snoring that disrupted the sleep of his bed partner.",
+      "expected": {
+        "patient_summary": "patient with sleep apnea",
+        "conditions": [
+          "sleep apnea"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Refractory Hypertension - Followup ",
+      "_review_status": "pending",
+      "text": "PROBLEM LIST:,1. Refractory hypertension, much improved.,2. History of cardiac arrhythmia and history of pacemaker secondary to AV block.,3. History of GI bleed in 1995.,4. History of depression.,HISTORY OF PRESENT ILLNESS:,  This is a return visit to the renal clinic for this patient. She is an 85-year-old woman with history as noted above. Her last visit was approximately four months ago.",
+      "expected": {
+        "patient_summary": "patient with refractory hypertension, cardiac arrhythmia, gi bleed, depression, hypertension",
+        "conditions": [
+          "refractory hypertension",
+          "cardiac arrhythmia",
+          "gi bleed",
+          "depression",
+          "hypertension"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Sexual Dysfunction - Chart Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 33-year-old black male who comes in to the office today main complaint of sexual dysfunction. Patient reports that he would like to try Cialis to see if it will improve his erectile performance. Patient states that he did a quiz on-line at the Cialis web site and did not score in the normal range, so he thought he should come in.",
+      "expected": {
+        "patient_summary": "patient on cialis",
+        "conditions": [],
+        "medications": [
+          "cialis"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Rheumatology Progress Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is here for a follow-up. The patient has a history of lupus, currently on Plaquenil 200-mg b.i.d. Eye report was noted and appreciated. The patient states that she is having some aches and pains of the hands and elbows that started recently a few weeks ago. She denied having any trauma. She states that the pain is bothering her.",
+      "expected": {
+        "patient_summary": "patient with lupus",
+        "conditions": [
+          "lupus"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Pulmonary Medicine Clinic Followup ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient returns to the Pulmonary Medicine Clinic for followup evaluation of COPD and emphysema. She was last seen in the clinic in March 2004. Since that time, she has been hospitalized for psychiatric problems and now is in a nursing facility.",
+      "expected": {
+        "patient_summary": "patient with copd, emphysema",
+        "conditions": [
+          "copd",
+          "emphysema"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Rotator Cuff Tear ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Followup left-sided rotator cuff tear and cervical spinal stenosis.,HISTORY OF PRESENT ILLNESS: , Ms. ABC returns today for followup regarding her left shoulder pain and left upper extremity C6 radiculopathy. I had last seen her on 06/21/07.,At that time, she had been referred to me Dr. X and Dr. Y for evaluation of her left-sided C6 radiculopathy.",
+      "expected": {
+        "patient_summary": "patient with left-sided rotator cuff tear, cervical spinal stenosis, left upper extremity c6 radiculopathy",
+        "conditions": [
+          "left-sided rotator cuff tear",
+          "cervical spinal stenosis",
+          "left upper extremity c6 radiculopathy"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Recheck of ADHD Meds ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a 6-year-old male who comes in rechecking his ADHD medicines. We placed him on Adderall, first time he has been on a stimulant medication last month. Mother said the next day, he had a wonderful improvement, and he has been doing very well with the medicine. She has two concerns.",
+      "expected": {
+        "patient_summary": "patient with adhd and on adderall",
+        "conditions": [
+          "adhd"
+        ],
+        "medications": [
+          "adderall"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Pulmonary - Followup Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient returns to the Pulmonary Medicine Clinic for followup evaluation of interstitial disease secondary to lupus pneumonitis. She was last seen in the Pulmonary Medicine Clinic in January 2004. Since that time, her respiratory status has been quite good.",
+      "expected": {
+        "patient_summary": "patient with lupus pneumonitis, interstitial disease",
+        "conditions": [
+          "lupus pneumonitis",
+          "interstitial disease"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Q-Fever Endocarditis ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , This is a follow-up visit on this 16-year-old male who is currently receiving doxycycline 150 mg by mouth twice daily as well as hydroxychloroquine 200 mg by mouth three times a day for Q-fever endocarditis. He is also taking digoxin, aspirin, warfarin, and furosemide.",
+      "expected": {
+        "patient_summary": "patient with q-fever endocarditis and on doxycycline 150 mg by mouth twice daily, hydroxychloroquine 200 mg by mouth three times a day, digoxin, aspirin, warfarin, furosemide",
+        "conditions": [
+          "q-fever endocarditis"
+        ],
+        "medications": [
+          "doxycycline 150 mg by mouth twice daily",
+          "hydroxychloroquine 200 mg by mouth three times a day",
+          "digoxin",
+          "aspirin",
+          "warfarin",
+          "furosemide"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostate Adenocarcinoma - 3 ",
+      "_review_status": "pending",
+      "text": "PHYSICAL EXAMINATION: , The patient is a 63-year-old executive who was seen by his physician for a company physical. He stated that he was in excellent health and led an active life. His physical examination was normal for a man of his age. Chest x-ray and chemical screening blood work were within normal limits.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostate Adenocarcinoma - 2 ",
+      "_review_status": "pending",
+      "text": "PHYSICAL EXAMINATION:,  This 71-year-old man went to his primary care physician for a routine physical. His only complaints were nocturia times two and a gradual \"slowing down\" feeling. The physical examination on 1/29 was within normal limits except for the digital rectal exam which revealed an asymmetric prostate gland with nodularity, R>L. PSA was elevated.",
+      "expected": {
+        "patient_summary": "patient with asymmetric prostate gland with nodularity",
+        "conditions": [
+          "asymmetric prostate gland with nodularity"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostatitis - Recheck ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 65-year-old man with chronic prostatitis who returns for recheck. He follow with Dr. XYZ about every three to four months. His last appointment was in May 2004. Has had decreased libido since he has been on Proscar. He had tried Viagra with some improvement. He has not had any urinary tract infection since he has been on Proscar.",
+      "expected": {
+        "patient_summary": "patient with chronic prostatitis and on proscar, viagra",
+        "conditions": [
+          "chronic prostatitis"
+        ],
+        "medications": [
+          "proscar",
+          "viagra"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostate Adenocarcinoma - 4 ",
+      "_review_status": "pending",
+      "text": "PHYSICAL EXAMINATION:,  Patient is a 46-year-old white male seen for annual physical exam and had an incidental PSA elevation of 4.0. All other systems were normal.,PROCEDURES:  ,Sextant biopsy of the prostate.,Radical prostatectomy:  Excised prostate including capsule, pelvic lymph nodes, seminal vesicles, and small portion of bladder neck.,PATHOLOGY:,Prostate biopsy:  Right lobe, negative.",
+      "expected": {
+        "patient_summary": "patient with psa elevation of 4.0",
+        "conditions": [
+          "psa elevation of 4.0"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostate Adenocarcinoma - 1 ",
+      "_review_status": "pending",
+      "text": "HISTORY:,  This 75-year-old man was transferred from the nursing home where he lived to the hospital late at night on 4/11 through the Emergency Department in complete urinary obstruction. After catheterization, the patient underwent cystoscopy on 4/13.",
+      "expected": {
+        "patient_summary": "patient with urinary obstruction",
+        "conditions": [
+          "urinary obstruction"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Prostate Fossa Irradiation - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient returns for followup evaluation 21 months after undergoing prostate fossa irradiation for recurrent Gleason 8 adenocarcinoma. His urinary function had been stable until 2 days ago.",
+      "expected": {
+        "patient_summary": "patient with gleason 8 adenocarcinoma",
+        "conditions": [
+          "gleason 8 adenocarcinoma"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Progress Note - Supraglottitis ",
+      "_review_status": "pending",
+      "text": "HISTORY: , A 59-year-old male presents in followup after being evaluated and treated as an in-patient by Dr. X for acute supraglottitis with airway obstruction and parapharyngeal cellulitis and peritonsillar cellulitis, admitted on 05/23/2008, discharged on 05/24/2008.",
+      "expected": {
+        "patient_summary": "patient with acute supraglottitis, airway obstruction, parapharyngeal cellulitis, peritonsillar cellulitis",
+        "conditions": [
+          "acute supraglottitis",
+          "airway obstruction",
+          "parapharyngeal cellulitis",
+          "peritonsillar cellulitis"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Progress Note - Liver Cirrhosis ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient is a 55-year-old Hispanic male who was seen initially in the office February 15, 2006, with epigastric and right upper quadrant abdominal pain, nausea, dizziness, and bloating. The patient at that time stated that he had established diagnosis of liver cirrhosis.",
+      "expected": {
+        "patient_summary": "patient with liver cirrhosis",
+        "conditions": [
+          "liver cirrhosis"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Progress Note - Iron Deficiency Anemia ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  The patient is a 55-year-old gentleman, a patient of Mrs. A, who was referred to me because the patient developed iron deficiency anemia and he had blood in his stool. The patient also has chronic diarrhea. His anemia was diagnosed months ago when he presented with unusual pruritus and he got a CBC. At that time he was discovered to have hemoglobin of 9 and MCV 65.",
+      "expected": {
+        "patient_summary": "patient with iron deficiency anemia, chronic diarrhea",
+        "conditions": [
+          "iron deficiency anemia",
+          "chronic diarrhea"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Polycythemia Rubra Vera ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT: , Polycythemia rubra vera.,HISTORY OF PRESENT ILLNESS: , The patient is an 83-year-old female with a history of polycythemia vera. She comes in to clinic today for followup. She has not required phlebotomies for several months.",
+      "expected": {
+        "patient_summary": "patient with polycythemia vera",
+        "conditions": [
+          "polycythemia vera"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Postop Parathyroid Exploration & Parathyroidectomy ",
+      "_review_status": "pending",
+      "text": "SUMMARY:  ,This patient is one-day postop open parathyroid exploration with subtotal parathyroidectomy and intraoperative PTH monitoring for parathyroid hyperplasia. She has had an uneventful postoperative night. She put out 1175 mL of urine since surgery. Her incision looks good. IV site and extremities are unremarkable.,LABORATORY DATA:  ,Her calcium level was 7.5 this morning.",
+      "expected": {
+        "patient_summary": "patient with parathyroid hyperplasia",
+        "conditions": [
+          "parathyroid hyperplasia"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Polycythemia Vera Followup ",
+      "_review_status": "pending",
+      "text": "DIAGNOSIS:,  Polycythemia vera with secondary myelofibrosis.,REASON FOR VISIT:, Followup of the above condition.,CHIEF COMPLAINT: , Left shin pain.,HISTORY OF PRESENT ILLNESS: , A 55-year-old white male who carries a diagnosis of polycythemia vera with secondary myelofibrosis. Diagnosis was made some time in 2005/2006. Initially, he underwent phlebotomy. He subsequently transferred his care here.",
+      "expected": {
+        "patient_summary": "patient with polycythemia vera, secondary myelofibrosis and on phlebotomy",
+        "conditions": [
+          "polycythemia vera",
+          "secondary myelofibrosis"
+        ],
+        "medications": [
+          "phlebotomy"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Podiatry - Progress Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  Mr. Sample Patient returns to the Sample Clinic with the chief complaint of painful right heel. The patient states that the heel has been painful for approximately two weeks, it is starts with the first step in the morning and gets worse with activity during the day. The patient states that he is currently doing no treatment for it.",
+      "expected": {
+        "patient_summary": "patient with painful right heel",
+        "conditions": [
+          "painful right heel"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Posttransplant Lymphoproliferative Disorder ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT: , The patient is here for followup visit and chemotherapy.,DIAGNOSES:,1. Posttransplant lymphoproliferative disorder.,2. Chronic renal insufficiency.,3. Squamous cell carcinoma of the skin.,4. Anemia secondary to chronic renal insufficiency and chemotherapy.,5. Hypertension.,HISTORY OF PRESENT ILLNESS: , A 51-year-old white male diagnosed with PTLD in latter half of 2007.",
+      "expected": {
+        "patient_summary": "patient with posttransplant lymphoproliferative disorder, chronic renal insufficiency, squamous cell carcinoma of the skin, anemia secondary to chronic renal insufficiency and chemotherapy, hypertension",
+        "conditions": [
+          "posttransplant lymphoproliferative disorder",
+          "chronic renal insufficiency",
+          "squamous cell carcinoma of the skin",
+          "anemia secondary to chronic renal insufficiency and chemotherapy",
+          "hypertension"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Plantar Fasciitis ",
+      "_review_status": "pending",
+      "text": "S -, A 44-year-old, 250-pound male presents with extreme pain in his left heel. This is his chief complaint. He says that he has had this pain for about two weeks. He works on concrete floors. He says that in the mornings when he gets up or after sitting, he has extreme pain and great difficulty in walking.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Physical Therapy - Outpatient Rehab ",
+      "_review_status": "pending",
+      "text": "SUMMARY:  ,The patient has attended physical therapy from 11/16/06 to 11/21/06. The patient has 3 call and cancels and 3 no shows. The patient has been sick for several weeks due to a cold as well as food poisoning, so has missed many appointments.,SUBJECTIVE:  ,The patient states pain still significant, primarily 1st seen in the morning.",
+      "expected": {
+        "patient_summary": "patient with cold, food poisoning",
+        "conditions": [
+          "cold",
+          "food poisoning"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " PAF - 6-Month Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Six-month follow-up visit for paroxysmal atrial fibrillation (PAF).,She reports that she is getting occasional chest pains with activity.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Pain Management Progress Note ",
+      "_review_status": "pending",
+      "text": "DIAGNOSES:,1. Cervical dystonia.,2. Post cervical laminectomy pain syndrome.,Ms. XYZ states that the pain has now shifted to the left side. She has noticed a marked improvement on the right side, which was subject to a botulinum toxin injection about two weeks ago.",
+      "expected": {
+        "patient_summary": "patient with cervical dystonia, post cervical laminectomy pain syndrome and on botulinum toxin",
+        "conditions": [
+          "cervical dystonia",
+          "post cervical laminectomy pain syndrome"
+        ],
+        "medications": [
+          "botulinum toxin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Overactive Bladder ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Overactive bladder with microscopic hematuria.,HISTORY OF PRESENT ILLNESS: , The patient is a 56-year-old noted to have microscopic hematuria with overactive bladder. Her cystoscopy performed was unremarkable. She continues to have some episodes of frequency and urgency mostly with episodes during the day and rare at night.",
+      "expected": {
+        "patient_summary": "patient with overactive bladder, microscopic hematuria",
+        "conditions": [
+          "overactive bladder",
+          "microscopic hematuria"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " ORIF Facial Fractures - Followup ",
+      "_review_status": "pending",
+      "text": "Mr. ABC was transferred to room 123 this afternoon. We discussed this with the nurses, and it was of course cleared by Dr. X. The patient is now on his third postoperative day for an open reduction and internal fixation for two facial fractures, as well as open reduction nasal fracture. He is on his eighth hospital day.,The patient had nasal packing in place, which was removed this evening.",
+      "expected": {
+        "patient_summary": "patient with open reduction and internal fixation for two facial fractures, open reduction nasal fracture and on nasal packing",
+        "conditions": [
+          "open reduction and internal fixation for two facial fractures",
+          "open reduction nasal fracture"
+        ],
+        "medications": [
+          "nasal packing"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Possible Spider Bite ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This 47-year-old white female presents with concern about possible spider bite to the left side of her neck. She is not aware of any specific injury. She noticed a little tenderness and redness on her left posterior shoulder about two days ago. It seems to be getting a little bit larger in size, and she saw some red streaks extending up her neck. She has had no fever.",
+      "expected": {
+        "patient_summary": "patient with possible spider bite to the left side of her neck, tenderness and redness on her left posterior shoulder",
+        "conditions": [
+          "possible spider bite to the left side of her neck",
+          "tenderness and redness on her left posterior shoulder"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Poison Ivy - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  He is a 24-year-old male who said that he had gotten into some poison ivy this weekend while he was fishing. He has had several cases of this in the past and he says that is usually takes quite awhile for him to get over it; he said that the last time he was here he got a steroid injection by Dr. Blackman; it looked like it was Depo-Medrol 80 mg.",
+      "expected": {
+        "patient_summary": "patient with poison ivy and on depo-medrol 80 mg",
+        "conditions": [
+          "poison ivy"
+        ],
+        "medications": [
+          "depo-medrol 80 mg"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " ORIF - Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Followup visit status post removal of external fixator and status post open reduction internal fixation of right tibial plateau fracture.,HISTORY OF PRESENT ILLNESS: , The patient is now approximately week status post removal of Ex-Fix from the right knee with an MUA following open reduction internal fixation of right tibial plateau fracture.",
+      "expected": {
+        "patient_summary": "patient with right tibial plateau fracture",
+        "conditions": [
+          "right tibial plateau fracture"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Ophthalmology Progress Note - 2 ",
+      "_review_status": "pending",
+      "text": "A fluorescein angiogram was ordered at today's visit to rule out macular edema. We have asked her to return in one to two weeks' time to discuss the results of her angiogram and possible intervention and will be sure to keep you apprised of her ongoing progress. A copy of the angiogram is enclosed for your records.",
+      "expected": {
+        "patient_summary": "patient with macular edema",
+        "conditions": [
+          "macular edema"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Osteoarthritis - Progress Note ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT: , Right knee. ,HISTORY OF THE PRESENT ILLNESS: , The patient presents today for follow up of osteoarthritis Grade IV of the bilateral knees and flexion contracture, doing great. Physical therapy is helping.",
+      "expected": {
+        "patient_summary": "patient with osteoarthritis grade iv of the bilateral knees, flexion contracture",
+        "conditions": [
+          "osteoarthritis grade iv of the bilateral knees",
+          "flexion contracture"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Ophthalmology Progress Note - 1 ",
+      "_review_status": "pending",
+      "text": "She is stable at this time and does not require any intervention at today's visit. I have asked her to return in six months' for a followup dilated examination, but would be happy to see her sooner should you or she notice any changes in her vision.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " MGUS Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT: , MGUS.,HISTORY OF PRESENT ILLNESS:,  This is an extremely pleasant 86-year-old gentleman, who I follow for his MGUS. I initially saw him for thrombocytopenia when his ANC was 1300. A bone marrow biopsy was obtained. Interestingly enough, at the time of his bone marrow biopsy, his hemoglobin was 13.0 and his white blood cell count was 6.5 with a platelet count of 484,000.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Nephrolithiasis - Progress Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient returns today for a followup. She was recently in the hospital and was found to be septic from nephrolithiasis. This was all treated. She did require a stent in the left ureter. Dr. XYZ took care of this. She had a stone, which was treated with lithotripsy. She is now back here for followup.",
+      "expected": {
+        "patient_summary": "patient with nephrolithiasis",
+        "conditions": [
+          "nephrolithiasis"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Mesothelioma - Chart Note ",
+      "_review_status": "pending",
+      "text": "The patient's home regimen includes Duragesic patch at 125 mcg every 3 days. She is currently on a Dilaudid PCA of 1 mg every 10 minutes lockout, Dilaudid boluses 2 mg q.3 h. p.r.n., Ativan 2 mg q.4 h., Tylenol per rectum.",
+      "expected": {
+        "patient_summary": "patient on tylenol per rectum",
+        "conditions": [],
+        "medications": [
+          "tylenol per rectum"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Multiple Progress Notes ",
+      "_review_status": "pending",
+      "text": "PROGRESS NOTES,4/16/01:,Patient in respiratory failure, on ventilator,Request airline placement,Airline tracing good,4/17/01:,S: Sedated, intubated in NAD,O: Lungs: Increased bibasilar crackles,A/P: Respiratory arrest, pneumonia, COPD exacerbation,Replete K+, continue IVABX, start TPN, decrease TV, review ABGs,4/18/01:,S: Sedated and intubated, one episode NSVT,O: ABGs: 7.38/67/86/97,4/19/01:,S: S",
+      "expected": {
+        "patient_summary": "patient with respiratory arrest, pneumonia, copd exacerbation, copd and on ivabx, tpn",
+        "conditions": [
+          "respiratory arrest",
+          "pneumonia",
+          "copd exacerbation",
+          "copd"
+        ],
+        "medications": [
+          "ivabx",
+          "tpn"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Multiple Medical Problems ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient was seen today by me at Nursing Home for her multiple medical problems. The nurses report that she has been confused at times, having incontinent stool in the sink one time but generally she does not do that poorly. She does have trouble walking which she attributes to weak legs. She fell a couple of months ago. Her eating has been fair.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Obesity Hypoventilation Syndrome ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , This is a 61-year-old woman with a history of polyarteritis nodosa, mononeuritis multiplex involving the lower extremities, and severe sleep apnea returns in followup following an overnight sleep study, on CPAP and oxygen to evaluate her for difficulty in initiating and maintaining sleep.",
+      "expected": {
+        "patient_summary": "patient with polyarteritis nodosa, mononeuritis multiplex, severe sleep apnea and on cpap, oxygen",
+        "conditions": [
+          "polyarteritis nodosa",
+          "mononeuritis multiplex",
+          "severe sleep apnea"
+        ],
+        "medications": [
+          "cpap",
+          "oxygen"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Mantle Cell Lymphoma ",
+      "_review_status": "pending",
+      "text": "PRINCIPAL DIAGNOSES:,1. A 61-year-old white male with a diagnosis of mantle cell lymphoma, diagnosed in 2001, status post autologous transplant with BEAM regimen in 04/02 followed by relapse.,2. Allogeneic peripheral stem cell transplant from match-related brother and the patient is 53 months out from transplant.,3.",
+      "expected": {
+        "patient_summary": "patient with mantle cell lymphoma, allogeneic peripheral stem cell transplant and on beam regimen",
+        "conditions": [
+          "mantle cell lymphoma",
+          "allogeneic peripheral stem cell transplant"
+        ],
+        "medications": [
+          "beam regimen"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Melena - ICU Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY:,  Reason for ICU followup today is acute anemia secondary to upper GI bleeding with melena with dropping hemoglobin from 11 to 8, status post transfusion of 2 units PRBCs with EGD performed earlier today by Dr.",
+      "expected": {
+        "patient_summary": "patient with acute anemia, upper gi bleeding",
+        "conditions": [
+          "acute anemia",
+          "upper gi bleeding"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Non-Hodgkin lymphoma Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  Follicular non-Hodgkin's lymphoma.,HISTORY OF PRESENT ILLNESS: , This is an extremely pleasant 69 year-old gentleman, who I follow for his follicular lymphoma. His history is that in February of 1988 he had a biopsy of a left posterior auricular lymph node and pathology showed follicular non-Hodgkin's lymphoma.",
+      "expected": {
+        "patient_summary": "patient with follicular non-hodgkin's lymphoma",
+        "conditions": [
+          "follicular non-hodgkin's lymphoma"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Neurologic Examination ",
+      "_review_status": "pending",
+      "text": "NEUROLOGICAL EXAMINATION: , At present the patient is awake, alert and fully oriented. There is no evidence of cognitive or language dysfunction. Cranial nerves:  Visual fields are full. Funduscopic examination is normal. Extraocular movements full. Pupils equal, round,  react to light. There is no evidence of nystagmus noted. Fifth nerve function is normal. There is no facial asymmetry noted.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Lung Cancer Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,1. Extensive stage small cell lung cancer.,2. Chemotherapy with carboplatin and etoposide.,3. Left scapular pain status post CT scan of the thorax.,HISTORY OF PRESENT ILLNESS: , The patient is a 67-year-old female with extensive stage small cell lung cancer. She is currently receiving treatment with carboplatin and etoposide. She completed her fifth cycle on 08/12/10.",
+      "expected": {
+        "patient_summary": "patient with extensive stage small cell lung cancer and on carboplatin, etoposide",
+        "conditions": [
+          "extensive stage small cell lung cancer"
+        ],
+        "medications": [
+          "carboplatin",
+          "etoposide"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Lung Biopsy Discussion ",
+      "_review_status": "pending",
+      "text": "CHART NOTE:,  She is here to discuss possible open lung biopsy that she has actually scheduled for tomorrow. Dr. XYZ had seen her because of her complaints of shortness of breath. Then she had the pulmonary function test and CT scan and he felt that she probably had usual interstitial pneumonitis, but wanted her to have an open lung biopsy so he had her see Dr. XYZ Estep. He had concurred with Dr.",
+      "expected": {
+        "patient_summary": "patient with usual interstitial pneumonitis, shortness of breath",
+        "conditions": [
+          "usual interstitial pneumonitis",
+          "shortness of breath"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Leg Pain & Bone Pain ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  Leg pain.,HISTORY OF PRESENT ILLNESS:,  This is a 56-year-old female who has pain in her legs at nighttime and when she gets up it comes and goes, radiates from her buttocks to her legs, sometimes it is her ankle. She has noticed it since she has been on Lipitor. She has had some night sweats occasionally. She has had a little bit of fever and nausea.",
+      "expected": {
+        "patient_summary": "patient with leg pain and on lipitor",
+        "conditions": [
+          "leg pain"
+        ],
+        "medications": [
+          "lipitor"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Leg Pain - Progress Note ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient is a 44-year-old man who was seen for complaints of low back and right thigh pain. He attributes this to an incident in which he was injured in 1994. I do not have any paperwork authenticating his claim that there is an open claim. Most recently he was working at Taco Bell, when he had a recurrence of back pain, and he was seen in our clinic on 04/12/05.",
+      "expected": {
+        "patient_summary": "patient with right thigh pain",
+        "conditions": [
+          "right thigh pain"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Lap Band Adjustment ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Lap band adjustment.,HISTORY OF PRESENT ILLNESS:,  Ms. A is status post lap band placement back in 01/09 and she is here on a band adjustment. Apparently, she had some problems previously with her adjustments and apparently she has been under a lot of stress. She was in a car accident a couple of weeks ago and she has problems, she does not feel full.",
+      "expected": {
+        "patient_summary": "patient with car accident",
+        "conditions": [
+          "car accident"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Ischemic Cardiac Disease - Progress Note ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  The patient is a 68-year-old man who returns for recheck. He has a history of ischemic cardiac disease, he did see Dr. XYZ in February 2004 and had a thallium treadmill test. He did walk for 8 minutes. The scan showed some mild inferior wall scar and ejection fraction was well preserved.",
+      "expected": {
+        "patient_summary": "patient with ischemic cardiac disease",
+        "conditions": [
+          "ischemic cardiac disease"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Lobectomy - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient is a 65-year-old female who underwent left upper lobectomy for stage IA non-small cell lung cancer. She returns for a routine surveillance visit.,She has undergone since her last visit an abdominopelvic CT, which shows an enlarging simple cyst of the left kidney.",
+      "expected": {
+        "patient_summary": "patient with stage ia non-small cell lung cancer, enlarging simple cyst of the left kidney",
+        "conditions": [
+          "stage ia non-small cell lung cancer",
+          "enlarging simple cyst of the left kidney"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Laminectomy & Foraminotomy Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Followup status post L4-L5 laminectomy and bilateral foraminotomies, and L4-L5 posterior spinal fusion with instrumentation.,HISTORY OF PRESENT ILLNESS:,  Ms.",
+      "expected": {
+        "patient_summary": "patient with l4-l5 laminectomy and bilateral foraminotomies, l4-l5 posterior spinal fusion with instrumentation",
+        "conditions": [
+          "l4-l5 laminectomy and bilateral foraminotomies",
+          "l4-l5 posterior spinal fusion with instrumentation"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Infected Toenails ",
+      "_review_status": "pending",
+      "text": "S - ,This patient has reoccurring ingrown infected toenails. He presents today for continued care.,O - ,On examination, the left great toenail is ingrown on the medial and lateral toenail border. The right great toenail is ingrown on the lateral nail border only. There is mild redness and granulation tissue growing on the borders of the toes.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Hypertension - Progress Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 78-year-old female who returns for recheck. She has hypertension.",
+      "expected": {
+        "patient_summary": "patient with hypertension",
+        "conditions": [
+          "hypertension"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " HIV Followup - 1 ",
+      "_review_status": "pending",
+      "text": "PROBLEM LIST:,1. HIV stable.,2. Hepatitis C chronic.,3. History of depression, stable off meds.,4. Hypertension, moderately controlled.,CHIEF COMPLAINT: , The patient comes for a routine followup appointment.,HISTORY OF PRESENTING ILLNESS: , This is a 34-year-old African American female who comes today for routine followup. She has no acute complaints.",
+      "expected": {
+        "patient_summary": "patient with hiv stable, hepatitis c chronic, history of depression, hypertension, moderately controlled, hypertension",
+        "conditions": [
+          "hiv stable",
+          "hepatitis c chronic",
+          "history of depression",
+          "hypertension, moderately controlled",
+          "hypertension"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 9 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:  ,This patient presents to the office today for a checkup. He has several things to go over and discuss. First he is sick. He has been sick for a month intermittently, but over the last couple of weeks it is worse. He is having a lot of yellow phlegm when he coughs. It feels likes it is in his chest.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 7 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  One-month followup.,HISTORY OF PRESENT ILLNESS:,  The patient is an 88-year-old Caucasian female. She comes here today with a friend. The patient has no complaints. She states she has been feeling well. Her knees are not hurting her at all anymore and she is not needing Bextra any longer. I think the last steroid injection that she had with Dr. XYZ really did help.",
+      "expected": {
+        "patient_summary": "patient on bextra",
+        "conditions": [],
+        "medications": [
+          "bextra"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 8 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , I am following the patient today for multiple issues. He once again developed gross hematuria, which was unprovoked. His Coumadin has been held. The patient has known BPH and is on Flomax. He is being treated with Coumadin because of atrial fibrillation and stroke. This is the second time he has had significant gross hematuria this month.",
+      "expected": {
+        "patient_summary": "patient with bph, atrial fibrillation, gross hematuria and on flomax, coumadin",
+        "conditions": [
+          "bph",
+          "atrial fibrillation",
+          "gross hematuria"
+        ],
+        "medications": [
+          "flomax",
+          "coumadin"
+        ],
+        "risk_level": "high",
+        "next_step": "neurology referral"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " HIV Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient is a 41-year-old white male with a history of HIV disease. His last CD4 count was 425, viral load was less than 50 in 08/07. He was recently hospitalized for left gluteal abscess, for which he underwent I&D and he has newly diagnosed diabetes mellitus. He also has a history of hypertension and hypertriglyceridemia.",
+      "expected": {
+        "patient_summary": "patient with hiv disease, diabetes mellitus, hypertension, hypertriglyceridemia, left gluteal abscess, diabetes",
+        "conditions": [
+          "hiv disease",
+          "diabetes mellitus",
+          "hypertension",
+          "hypertriglyceridemia",
+          "left gluteal abscess",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "endocrinology follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 6 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is in with several medical problems. He complains his mouth being sore since last week and also some \"trouble with my eyes.\"  He states that they feel \"funny\" but he is seeing okay. He denies any more diarrhea or abdominal pain. Bowels are working okay. He denies nausea or diarrhea. Eating is okay. He is emptying his bladder okay. He denies dysuria.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 11 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient has recently had an admission for pneumonia with positive blood count. She was treated with IV antibiotics and p.o. antibiotics; she improved on that. She was at home and doing quite well for approximately 10 to 12 days when she came to the ER with a temperature of 102. She was found to have strep. She was treated with penicillin and sent home.",
+      "expected": {
+        "patient_summary": "patient with pneumonia, strep and on iv antibiotics, p.o. antibiotics, penicillin",
+        "conditions": [
+          "pneumonia",
+          "strep"
+        ],
+        "medications": [
+          "iv antibiotics",
+          "p.o. antibiotics",
+          "penicillin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 10 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , The patient has NG tube in place for decompression. She says she is feeling a bit better.,PHYSICAL EXAMINATION:,VITAL SIGNS:  She is afebrile. Pulse is 58 and blood pressure is 110/56.,SKIN:  There is good skin turgor.,GENERAL:  She is not in acute distress.,CHEST:  Clear to auscultation. There is good air movement bilaterally.,CARDIOVASCULAR:  First and second sounds are heard.",
+      "expected": {
+        "patient_summary": "patient with decompression",
+        "conditions": [
+          "decompression"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 2 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  Overall, she has been doing well. Her blood sugars have usually been less than or equal to 135 by home glucose monitoring. Her fasting blood sugar today is 120 by our Accu-Chek. She is exercising three times per week. Review of systems is otherwise unremarkable. ,OBJECTIVE:,  Her blood pressure is 110/60. Other vitals are stable. HEENT:  Unremarkable. Neck:  Unremarkable.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 8 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is an 89-year-old lady. She actually turns 90 later this month, seen today for a short-term followup. Actually, the main reasons we are seeing her back so soon which are elevated blood pressure and her right arm symptoms are basically resolved. Blood pressure is better even though she is not currently on the higher dose Mavik likely recommended.",
+      "expected": {
+        "patient_summary": "patient with elevated blood pressure, right arm symptoms and on mavik",
+        "conditions": [
+          "elevated blood pressure",
+          "right arm symptoms"
+        ],
+        "medications": [
+          "mavik"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 5 ",
+      "_review_status": "pending",
+      "text": "S:,  The patient is here today with his mom for several complaints. Number one, he has been having issues with his right shoulder. Approximately 10 days ago he fell, slipping on ice, did not hit his head but fell straight on his shoulder. He has been having issues ever since. He is having difficulties raising his arm over his head. He does have some intermittent numbness in his fingers at night.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 3 ",
+      "_review_status": "pending",
+      "text": "S:,  XYZ is in today not feeling well for the last three days. She is a bit sick with bodyaches. She is coughing. She has a sore throat, especially when she coughs. Her cough is productive of green colored sputum. She has had some chills. No vomiting. No diarrhea. She is sleeping okay. She does not feel like she needs anything for the cough.",
+      "expected": {
+        "patient_summary": "patient with bodyaches, cough, sore throat, chills",
+        "conditions": [
+          "bodyaches",
+          "cough",
+          "sore throat",
+          "chills"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , This patient presents to the office today because he has not been feeling well. He was in for a complete physical on 05/02/2008. According to the chart, the patient gives a history of feeling bad for about two weeks. At first he thought it was stress and anxiety and then he became worried it was something else. He says he is having a lot of palpitations.",
+      "expected": {
+        "patient_summary": "patient with palpitations",
+        "conditions": [
+          "palpitations"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 1 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med SOAP - 4 ",
+      "_review_status": "pending",
+      "text": "S:,  ABC is in today for a followup of her atrial fibrillation. They have misplaced the Cardizem. She is not on this and her heart rate is up just a little bit today. She does complain of feeling dizziness, some vertigo, some lightheadedness, and has attributed this to the Coumadin therapy. She is very adamant that she wants to stop the Coumadin. She is tired of blood draws.",
+      "expected": {
+        "patient_summary": "patient with atrial fibrillation and on cardizem, coumadin",
+        "conditions": [
+          "atrial fibrillation"
+        ],
+        "medications": [
+          "cardizem",
+          "coumadin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 9 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 44-year-old white female who is here today with multiple problems. The biggest concern she has today is her that left leg has been swollen. It is swollen for three years to some extent, but worse for the past two to three months. It gets better in the morning when she is up, but then through the day it begins to swell again.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 2 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  Followup on hypertension and hypercholesterolemia.,SUBJECTIVE:,  This is a 78-year-old male who recently had his right knee replaced and also back surgery about a year and a half ago. He has done well with that. He does most of the things that he wants to do. He travels at every chance he has, and he just got back from a cruise.",
+      "expected": {
+        "patient_summary": "patient with hypertension, hypercholesterolemia",
+        "conditions": [
+          "hypertension",
+          "hypercholesterolemia"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 6 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This 3-year-old male is brought by his mother with concerns about his eating. He has become a very particular eater, and not eating very much in general. However, her primary concern was he was vomiting sometimes after particular foods. They had noted that when he would eat raw carrots, within 5 to 10 minutes he would complain that his stomach hurt and then vomit.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 7 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 7-year-old male who comes in today with a three-day history of emesis and a four-day history of diarrhea. Apparently, his brother had similar symptoms.",
+      "expected": {
+        "patient_summary": "patient with emesis, diarrhea",
+        "conditions": [
+          "emesis",
+          "diarrhea"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 5 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 62-year-old white female with multiple chronic problems including hypertension and a lipometabolism disorder. She follows with Dr. XYZ on her hypertension, as well as myself. She continues to gain weight. Diabetes is therefore a major concern. In fact, her dad had diabetes and she has a brother who has diabetes.",
+      "expected": {
+        "patient_summary": "patient with hypertension, lipometabolism disorder, diabetes",
+        "conditions": [
+          "hypertension",
+          "lipometabolism disorder",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "endocrinology follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 4 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is in complaining of headaches and dizzy spells, as well as a new little rash on the medial right calf. She describes her dizziness as both vertigo and lightheadedness. She does not have a headache at present but has some intermittent headaches, neck pains, and generalized myalgias. She has noticed a few more bruises on her legs. No fever or chills with slight cough.",
+      "expected": {
+        "patient_summary": "patient with headaches, dizzy spells, rash on the medial right calf, vertigo, lightheadedness, neck pains, generalized myalgias, bruises on her legs",
+        "conditions": [
+          "headaches",
+          "dizzy spells",
+          "rash on the medial right calf",
+          "vertigo",
+          "lightheadedness",
+          "neck pains",
+          "generalized myalgias",
+          "bruises on her legs"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 13 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , The patient states she is feeling a bit better.,OBJECTIVE:,VITAL SIGNS:  Temperature is 95.4. Highest temperature recorded over the past 24 hours is 102.1.,CHEST:  Examination of the chest is clear to auscultation.,CARDIOVASCULAR:  First and second heart sounds were heard. No murmurs appreciated.,ABDOMEN:  Benign. Right renal angle is tender.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 12 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , The patient was seen and examined. He feels much better today, improved weakness and decreased muscular pain.",
+      "expected": {
+        "patient_summary": "patient with weakness, muscular pain",
+        "conditions": [
+          "weakness",
+          "muscular pain"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 3 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:, Followup on diabetes mellitus, hypercholesterolemia, and sinusitis. ,SUBJECTIVE:,  A 70-year-old female who was diagnosed with diabetes mellitus last fall. She has been checking her Accu-Cheks generally once a day, and they range from 82 to a high of 132. She feels well. She walks 1-2 miles most days. If the weather is bad, they go to a local mall. Otherwise they walk outside.",
+      "expected": {
+        "patient_summary": "patient with diabetes mellitus, hypercholesterolemia, sinusitis, diabetes",
+        "conditions": [
+          "diabetes mellitus",
+          "hypercholesterolemia",
+          "sinusitis",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 10 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  The patient is here for two-month followup.,HISTORY OF PRESENT ILLNESS:,  The patient is a 55-year-old Caucasian female. She has hypertension. She has had no difficulties with chest pain. She has some shortness of breath only at walking up the stairs. She has occasional lightheadedness only if she bends over then stands up quickly. She has had no nausea, vomiting, or diarrhea.",
+      "expected": {
+        "patient_summary": "patient with hypertension, chest pain, shortness of breath",
+        "conditions": [
+          "hypertension",
+          "chest pain",
+          "shortness of breath"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "cardiology referral"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 1 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,  Followup on diabetes mellitus, status post cerebrovascular accident.,SUBJECTIVE:,  This is a 70-year-old male who has no particular complaints other than he has just discomfort on his right side. We have done EMG studies. He has noticed it since his stroke about five years ago. He has been to see a neurologist.",
+      "expected": {
+        "patient_summary": "patient with diabetes mellitus, cerebrovascular accident, diabetes",
+        "conditions": [
+          "diabetes mellitus",
+          "cerebrovascular accident",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "high",
+        "next_step": "neurology referral"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Foot Pain - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This 32-year-old female comes in again still having not got a primary care physician. She said she was at Dr. XYZ office today for her appointment, and they cancelled her appointment because she has not gotten her Project Access insurance into affect. She says that Project Access is trying to find her a doctor.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient states that he feels sick and weak.,PHYSICAL EXAMINATION:,VITAL SIGNS:  Highest temperature recorded over the past 24 hours was 101.1, and current temperature is 99.2.,GENERAL:  The patient looks tired.,HEENT:  Oral mucosa is dry.,CHEST:  Clear to auscultation. He states that he has a mild cough, not productive.,CARDIOVASCULAR:  First and second heart sounds were heard.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Fundoplication & Gastrostomy Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Followup of laparoscopic fundoplication and gastrostomy.,HISTORY OF PRESENT ILLNESS: , The patient is a delightful baby girl, who is now nearly 8 months of age and had a tracheostomy for subglottic stenosis.",
+      "expected": {
+        "patient_summary": "patient with subglottic stenosis",
+        "conditions": [
+          "subglottic stenosis"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Foreskin - Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Follow up consultation, second opinion, foreskin.,HISTORY OF PRESENT ILLNESS: , A 2-week-old who at this point has otherwise been doing well. He has a relatively unremarkable foreskin. At this point in time, he otherwise seems to be doing reasonably well. The question is about the foreskin. He otherwise has no other significant issues.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gen Med Progress Note - 11 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 66-year-old female who presents to the clinic today for a five-month recheck on her type II diabetes mellitus, as well as hypertension. While here she had a couple of other issues as well. She stated that she has been having some right shoulder pain. She denies any injury but certain range of motion does cause it to hurt. No weakness, numbness or tingling.",
+      "expected": {
+        "patient_summary": "patient with type ii diabetes mellitus, hypertension, right shoulder pain, diabetes",
+        "conditions": [
+          "type ii diabetes mellitus",
+          "hypertension",
+          "right shoulder pain",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "endocrinology follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Evaluation of Allergies ",
+      "_review_status": "pending",
+      "text": "HISTORY:,  A 55-year-old female presents self-referred for the possibility of evaluation and treatment of allergies, diminished taste, xerostomia, gastroesophageal reflux disease, possible food allergies, chronic GI irritability, asthma, and environmental inhalant allergies. Please refer to chart for history and physical and review of systems and detailed medical history.,IMPRESSION:  ,1.",
+      "expected": {
+        "patient_summary": "patient with allergies, diminished taste, xerostomia, gastroesophageal reflux disease, possible food allergies, chronic gi irritability, asthma, environmental inhalant allergies",
+        "conditions": [
+          "allergies",
+          "diminished taste",
+          "xerostomia",
+          "gastroesophageal reflux disease",
+          "possible food allergies",
+          "chronic gi irritability",
+          "asthma",
+          "environmental inhalant allergies"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Fifth Disease - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  Grandfather brings the patient in today because of headaches, mostly in her face. She is feeling pressure there with a lot of sniffles. Last night, she complained of sore throat and a loose cough. Over the last three days, she has had a rash on her face, back and arms. A lot of fifth disease at school. She says it itches and they have been doing some Benadryl for this.",
+      "expected": {
+        "patient_summary": "patient with headaches, fifth disease and on benadryl",
+        "conditions": [
+          "headaches",
+          "fifth disease"
+        ],
+        "medications": [
+          "benadryl"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Gastric Bypass - Preop Eval ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Preop evaluation regarding gastric bypass surgery.,The patient has gone through the evaluation process and has been cleared from psychological, nutritional, and cardiac standpoint, also had great success on the preop Medifast diet.,PHYSICAL EXAMINATION: , The patient is alert and oriented x3. Temperature of 97.9, pulse of 76, blood pressure of 114/74, weight of 247.4 pounds.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Foot Lesions ",
+      "_review_status": "pending",
+      "text": "S -, An 84-year-old diabetic female, 5'7-1/2\" tall, 148 pounds, history of hypertension and diabetes. She presents today with complaint of a very painful left foot because of the lesions on the bottom of the foot.",
+      "expected": {
+        "patient_summary": "patient with diabetes, hypertension",
+        "conditions": [
+          "diabetes",
+          "hypertension"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "endocrinology follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Facial Rhytids ",
+      "_review_status": "pending",
+      "text": "HISTORY: , This 57-year-old female who presented today for evaluation and recommendations regarding facial rhytids.",
+      "expected": {
+        "patient_summary": "patient with facial rhytids",
+        "conditions": [
+          "facial rhytids"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - Weight Reduction ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a 56-year-old female who comes in for a dietary consultation for hyperlipidemia, hypertension, gastroesophageal reflux disease and weight reduction. The patient states that her husband has been diagnosed with high blood cholesterol as well. She wants some support with some dietary recommendations to assist both of them in healthier eating.",
+      "expected": {
+        "patient_summary": "patient with hyperlipidemia, hypertension, gastroesophageal reflux disease",
+        "conditions": [
+          "hyperlipidemia",
+          "hypertension",
+          "gastroesophageal reflux disease"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " E. Coli UTI - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS:,  The patient presents today for followup, recently noted for E. coli urinary tract infection. She was treated with Macrobid for 7 days, and only took one nighttime prophylaxis. She discontinued this medication to due to skin rash as well as hives. Since then, this had resolved. Does not have any dysuria, gross hematuria, fever, chills.",
+      "expected": {
+        "patient_summary": "patient with e. coli urinary tract infection and on macrobid",
+        "conditions": [
+          "e. coli urinary tract infection"
+        ],
+        "medications": [
+          "macrobid"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Endometrial Cancer Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:,1. Stage IIIC endometrial cancer.,2. Adjuvant chemotherapy with cisplatin, Adriamycin, and Abraxane.,HISTORY OF PRESENT ILLNESS: , The patient is a 47-year-old female who was noted to have abnormal vaginal bleeding in the fall of 2009. In March 2010, she had an abnormal endometrial ultrasound with thickening of the endometrium and an enlarged uterus.",
+      "expected": {
+        "patient_summary": "patient with stage iiic endometrial cancer and on cisplatin, adriamycin, abraxane",
+        "conditions": [
+          "stage iiic endometrial cancer"
+        ],
+        "medications": [
+          "cisplatin",
+          "adriamycin",
+          "abraxane"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Erectile Dysfunction - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient presents today for followup, history of erectile dysfunction, last visit started on Cialis 10 mg. He indicates that he has noticed some mild improvement of his symptoms, with no side effect. On this dose, he is having firm erection, able to penetrate, lasting for about 10 or so minutes. No chest pain, no nitroglycerin usage, no fever, no chills.",
+      "expected": {
+        "patient_summary": "patient with erectile dysfunction, chest pain and on cialis 10 mg",
+        "conditions": [
+          "erectile dysfunction",
+          "chest pain"
+        ],
+        "medications": [
+          "cialis 10 mg"
+        ],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Down's syndrome ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This 46-year-old white male with Down\u2019s syndrome presents with his mother for followup of hypothyroidism, as well as onychomycosis. He has finished six weeks of Lamisil without any problems. He is due to have an ALT check today. At his appointment in April, I also found that he was hypothyroid with elevated TSH. He was started on Levothroid 0.1 mg and has been taking that daily.",
+      "expected": {
+        "patient_summary": "patient with hypothyroidism, onychomycosis and on levothroid 0.1 mg, lamisil",
+        "conditions": [
+          "hypothyroidism",
+          "onychomycosis"
+        ],
+        "medications": [
+          "levothroid 0.1 mg",
+          "lamisil"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - Hyperlipidemia ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a followup dietary consultation for hyperlipidemia, hypertension, and possible metabolic syndrome. The patient reports that she has worked hard for a number of weeks following the meal plan prescribed, but felt like she was gaining weight and not losing weight on it. She is not sure that she was following it accurately.",
+      "expected": {
+        "patient_summary": "patient with hyperlipidemia, hypertension, metabolic syndrome",
+        "conditions": [
+          "hyperlipidemia",
+          "hypertension",
+          "metabolic syndrome"
+        ],
+        "medications": [],
+        "risk_level": "moderate",
+        "next_step": "clinician follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - 3 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is brought in by an assistant with some of his food diary sheets. They wonder if the patient needs to lose anymore weight.,OBJECTIVE:,  The patient's weight today is 186-1/2 pounds, which is down 1-1/2 pounds in the past month. He has lost a total of 34-1/2 pounds. I praised this.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - Gestational Diabetes ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a 38-year-old female who comes for dietary consultation for gestational diabetes. Patient reports that she is scared to eat because of its impact on her blood sugars. She is actually trying not to eat while she is working third shift at Wal-Mart. Historically however, she likes to eat out with a high frequency. She enjoys eating rice as part of her meals.",
+      "expected": {
+        "patient_summary": "patient with gestational diabetes, diabetes",
+        "conditions": [
+          "gestational diabetes",
+          "diabetes"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - 4 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is keeping a food journal that she brought in. She is counting calorie points, which ranged 26 to 30 per day. She is exercising pretty regularly. She attends Overeaters Anonymous and her sponsor is helping her and told her to get some ideas on how to plan snacks to prevent hypoglycemia. The patient requests information on diabetic exchanges.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - Diabetes - 1 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a 28-year-old female who comes for dietary consultation for diabetes during pregnancy. Patient reports that she had gestational diabetes with her first pregnancy. She did use insulin at that time as well. She does not fully understand what ketones are. She walks her daughter to school and back home each day which takes 20 minutes each way.",
+      "expected": {
+        "patient_summary": "patient with gestational diabetes, diabetes and on insulin",
+        "conditions": [
+          "gestational diabetes",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - 2 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient's assistant brings in her food diary sheets. The patient says she stays active by walking at the mall.,OBJECTIVE:,  Weight today is 201 pounds, which is down 3 pounds in the past month. She has lost a total of 24 pounds. I praised this and encouraged her to continue. I went over her food diary.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Diabetes Mellitus - SOAP Note - 2 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  I am asked to see the patient today with ongoing issues around her diabetic control. We have been fairly aggressively, downwardly adjusting her insulins, both the Lantus insulin, which we had been giving at night as well as her sliding scale Humalog insulin prior to meals.",
+      "expected": {
+        "patient_summary": "patient on lantus insulin, humalog insulin, insulin",
+        "conditions": [],
+        "medications": [
+          "lantus insulin",
+          "humalog insulin",
+          "insulin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - Diabetes - 2 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  The patient is a 79-year-old African-American female with a self reported height of 5 foot 3 inches and weight of 197 pounds. She was diagnosed with type 2 diabetes in 1983. She is not allergic to any medicines.,DIABETES MEDICATIONS:,  Her diabetes medications include Humulin insulin 70/30, 44 units at breakfast and 22 units at supper.",
+      "expected": {
+        "patient_summary": "patient with type 2 diabetes, diabetes and on humulin insulin 70/30, insulin",
+        "conditions": [
+          "type 2 diabetes",
+          "diabetes"
+        ],
+        "medications": [
+          "humulin insulin 70/30",
+          "insulin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Elevated PSA - Chart Note ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:  ,Elevated PSA with nocturia and occasional daytime frequency.,HISTORY: , A 68-year-old male with a history of frequency and some outlet obstructive issues along with irritative issues. The patient has had history of an elevated PSA and PSA in 2004 was 5.5. In 2003, he had undergone a biopsy by Dr. X, which was negative for adenocarcinoma of the prostate.",
+      "expected": {
+        "patient_summary": "patient with elevated psa, nocturia, occasional daytime frequency, outlet obstructive issues, irritative issues",
+        "conditions": [
+          "elevated psa",
+          "nocturia",
+          "occasional daytime frequency",
+          "outlet obstructive issues",
+          "irritative issues"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Diabetes Mellitus - SOAP Note - 1 ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:  ,Followup diabetes mellitus, type 1., ,SUBJECTIVE:,  Patient is a 34-year-old male with significant diabetic neuropathy. He has been off on insurance for over a year. Has been using NPH and Regular insulin to maintain his blood sugars. States that he is deathly afraid of having a low blood sugar due to motor vehicle accident he was in several years ago.",
+      "expected": {
+        "patient_summary": "patient with diabetic neuropathy, diabetes and on regular insulin, insulin",
+        "conditions": [
+          "diabetic neuropathy",
+          "diabetes"
+        ],
+        "medications": [
+          "regular insulin",
+          "insulin"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dermatitis - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  This is a 29-year-old Vietnamese female, established patient of dermatology, last seen in our office on 07/13/04. She comes in today as a referral from ABC, D.O. for a reevaluation of her hand eczema. I have treated her with Aristocort cream, Cetaphil cream, increased moisturizing cream and lotion, and wash her hands in Cetaphil cleansing lotion.",
+      "expected": {
+        "patient_summary": "patient with hand eczema and on aristocort cream, cetaphil cream, increased moisturizing cream and lotion, cetaphil cleansing lotion",
+        "conditions": [
+          "hand eczema"
+        ],
+        "medications": [
+          "aristocort cream",
+          "cetaphil cream",
+          "increased moisturizing cream and lotion",
+          "cetaphil cleansing lotion"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Diabetic Foot Care ",
+      "_review_status": "pending",
+      "text": "S - ,An 83-year-old diabetic female presents today stating that she would like diabetic foot care.,O - ,On examination, the lateral aspect of her left great toenail is deeply ingrown. Her toenails are thick and opaque. Vibratory sensation appears to be intact. Dorsal pedal pulses are 1/4. There is no hair growth seen on her toes, feet or lower legs. Her feet are warm to the touch.",
+      "expected": {
+        "patient_summary": "patient with clinical note provided",
+        "conditions": [],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Deviated Septum Repair - Followup ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT: , Septal irritation.,HISTORY OF PRESENT ILLNESS: , The patient is a 39-year-old African-American female status post repair of septal deviation but unfortunately, ultimately ended with a large septal perforation. The patient has been using saline nasal wash 2-3 times daily, however, she states that she still has discomfort in her nose with a \"stretching\" like pressure.",
+      "expected": {
+        "patient_summary": "patient with septal deviation, septal perforation and on saline nasal wash",
+        "conditions": [
+          "septal deviation",
+          "septal perforation"
+        ],
+        "medications": [
+          "saline nasal wash"
+        ],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Dietary Consult - 1 ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:,  His brother, although he is a vegetarian, has elevated cholesterol and he is on medication to lower it. The patient started improving his diet when he received the letter explaining his lipids are elevated. He is consuming less cappuccino, quiche, crescents, candy from vending machines, etc. He has started packing his lunch three to four times per week instead of eating out so much.",
+      "expected": {
+        "patient_summary": "patient with elevated cholesterol",
+        "conditions": [
+          "elevated cholesterol"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Diabetes Mellitus Followup ",
+      "_review_status": "pending",
+      "text": "PROBLEM LIST:,1. Type 1 diabetes mellitus, insulin pump.,2. Hypertension.,3. Hyperlipidemia.,HISTORY OF PRESENT ILLNESS: , The patient is a 39-year-old woman returns for followup management of type 1 diabetes mellitus. Her last visit was approximately 4 months ago.",
+      "expected": {
+        "patient_summary": "patient with type 1 diabetes mellitus, hypertension, hyperlipidemia, diabetes and on insulin pump, insulin",
+        "conditions": [
+          "type 1 diabetes mellitus",
+          "hypertension",
+          "hyperlipidemia",
+          "diabetes"
+        ],
+        "medications": [
+          "insulin pump",
+          "insulin"
+        ],
+        "risk_level": "moderate",
+        "next_step": "endocrinology follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " COPD & Pneumonia - SOAP ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE: , Review of the medical record shows that the patient is a 97-year-old female patient who has been admitted and has been treated for community acquired pneumonia along with COPD exacerbation. The patient does have a longstanding history of COPD. However, she does not use oxygen at her independent assisted living home. Yesterday, she had made improvement since being here at the hospital.",
+      "expected": {
+        "patient_summary": "patient with community acquired pneumonia, copd exacerbation, copd",
+        "conditions": [
+          "community acquired pneumonia",
+          "copd exacerbation",
+          "copd"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " CyberKnife Treatment - Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , The patient is a 61-year-old female who was treated with CyberKnife therapy to a right upper lobe stage IA non-small cell lung cancer. CyberKnife treatment was completed one month ago. She is now being seen for her first post-CyberKnife treatment visit.,Since undergoing CyberKnife treatment, she has had low-level nausea without vomiting.",
+      "expected": {
+        "patient_summary": "patient with stage ia non-small cell lung cancer",
+        "conditions": [
+          "stage ia non-small cell lung cancer"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Craniopharyngioma - Postop ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT:,  Postoperative visit for craniopharyngioma.,HISTORY OF PRESENT ILLNESS:,  Briefly, a 16-year-old right-handed boy who is in eleventh grade, who presents with some blurred vision and visual acuity difficulties, was found to have a suprasellar tumor. He was brought to the operating room on 01/04/07, underwent a transsphenoidal resection of tumor.",
+      "expected": {
+        "patient_summary": "patient with craniopharyngioma, suprasellar tumor",
+        "conditions": [
+          "craniopharyngioma",
+          "suprasellar tumor"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Clostridium Difficile Colitis Followup ",
+      "_review_status": "pending",
+      "text": "SUBJECTIVE:  ,The patient seen and examined feels better today. Still having diarrhea, decreased appetite. Good urine output 600 mL since 7 o'clock in the morning.",
+      "expected": {
+        "patient_summary": "patient with diarrhea, decreased appetite",
+        "conditions": [
+          "diarrhea",
+          "decreased appetite"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " D&C & Hysteroscopy Followup ",
+      "_review_status": "pending",
+      "text": "PREOPERATIVE DIAGNOSES:,1. Abnormal uterine bleeding.,2. Enlarged fibroid uterus.,3. Hypermenorrhea.,4. Intermenstrual spotting.,5. Thickened endometrium per ultrasound of a 2 cm lining.,POSTOPERATIVE DIAGNOSES:,1. Abnormal uterine bleeding.,2. Enlarged fibroid uterus.,3. Hypermenorrhea.,4. Intermenstrual spotting.,5. Thickened endometrium per ultrasound of a 2 cm lining.,6.",
+      "expected": {
+        "patient_summary": "patient with abnormal uterine bleeding, enlarged fibroid uterus, hypermenorrhea, intermenstrual spotting, thickened endometrium",
+        "conditions": [
+          "abnormal uterine bleeding",
+          "enlarged fibroid uterus",
+          "hypermenorrhea",
+          "intermenstrual spotting",
+          "thickened endometrium"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Circumcision Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Followup circumcision.,HISTORY OF PRESENT ILLNESS: , The patient had his circumcision performed on 09/16/2007 here at Children's Hospital. The patient had a pretty significant phimosis and his operative course was smooth.",
+      "expected": {
+        "patient_summary": "patient with phimosis",
+        "conditions": [
+          "phimosis"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Chronic Kidney Disease Followup ",
+      "_review_status": "pending",
+      "text": "HISTORY OF PRESENT ILLNESS: , This is a followup for this 69-year-old African American gentleman with stage IV chronic kidney disease secondary to polycystic kidney disease. His creatinine has ranged between 4 and 4.5 over the past 6 months, since I have been following him.",
+      "expected": {
+        "patient_summary": "patient with stage iv chronic kidney disease, polycystic kidney disease",
+        "conditions": [
+          "stage iv chronic kidney disease",
+          "polycystic kidney disease"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Chiropractic Progress Note ",
+      "_review_status": "pending",
+      "text": "CHIEF COMPLAINT:  ,Hip pain.,HISTORY OF PRESENTING ILLNESS:  ,The patient is a very pleasant 41-year-old white female that is known to me previously from our work at the Pain Management Clinic, as well as from my residency training program, San Francisco.",
+      "expected": {
+        "patient_summary": "patient with hip pain",
+        "conditions": [
+          "hip pain"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    },
+    {
+      "_specialty": "SOAP / Chart / Progress Notes",
+      "_sample_name": " Chronic Medical Conditions - Followup ",
+      "_review_status": "pending",
+      "text": "REASON FOR VISIT: , Followup evaluation and management of chronic medical conditions.,HISTORY OF PRESENT ILLNESS:,  The patient has been doing quite well since he was last seen. He comes in today with his daughter. He has had no symptoms of CAD or CHF. He had followup with Dr. X and she thought he was doing quite well as well. He has had no symptoms of hyperglycemia or hypoglycemia.",
+      "expected": {
+        "patient_summary": "patient with cad, chf, hyperglycemia, hypoglycemia",
+        "conditions": [
+          "cad",
+          "chf",
+          "hyperglycemia",
+          "hypoglycemia"
+        ],
+        "medications": [],
+        "risk_level": "low",
+        "next_step": "routine follow-up"
+      }
+    }
+  ]
+}

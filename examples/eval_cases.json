@@ -42,7 +42,7 @@
           "albuterol"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "pulmonology referral"
       }
     },
     {
@@ -84,7 +84,7 @@
           "losartan"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -155,7 +155,7 @@
           "apixaban"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency pulmonology consult"
       }
     },
     {
@@ -167,7 +167,7 @@
           "warfarin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "icu admission evaluation"
       }
     },
     {
@@ -181,7 +181,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -193,7 +193,7 @@
           "warfarin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "neurology referral"
       }
     },
     {
@@ -207,7 +207,7 @@
           "albuterol"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "urgent respiratory evaluation"
       }
     },
     {
@@ -222,7 +222,7 @@
           "albuterol"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "pulmonology referral"
       }
     },
     {
@@ -234,7 +234,7 @@
           "lisinopril"
         ],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -284,7 +284,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -315,7 +315,7 @@
           "insulin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -347,7 +347,7 @@
           "albuterol"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "pulmonology referral"
       }
     },
     {
@@ -377,7 +377,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -441,7 +441,7 @@
           "apixaban"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency pulmonology consult"
       }
     },
     {
@@ -455,7 +455,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -465,7 +465,7 @@
         "conditions": [],
         "medications": [],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "icu admission evaluation"
       }
     },
     {
@@ -479,7 +479,7 @@
           "albuterol"
         ],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -493,7 +493,7 @@
           "metformin"
         ],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -507,7 +507,7 @@
           "lisinopril"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -590,7 +590,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -622,7 +622,7 @@
           "albuterol"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "pulmonology referral"
       }
     },
     {
@@ -693,7 +693,7 @@
           "amlodipine"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "neurology referral"
       }
     },
     {
@@ -703,7 +703,7 @@
         "conditions": [],
         "medications": [],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -755,7 +755,7 @@
           "lisinopril"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -770,7 +770,7 @@
           "albuterol"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "urgent respiratory evaluation"
       }
     },
     {
@@ -784,7 +784,7 @@
           "apixaban"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency pulmonology consult"
       }
     },
     {
@@ -798,7 +798,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -812,7 +812,7 @@
           "metformin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "icu admission evaluation"
       }
     },
     {
@@ -824,7 +824,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -852,7 +852,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -880,7 +880,7 @@
         ],
         "medications": [],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "pulmonology referral"
       }
     },
     {
@@ -911,7 +911,7 @@
           "insulin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -949,7 +949,7 @@
           "warfarin"
         ],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -961,7 +961,7 @@
           "apixaban"
         ],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -1091,7 +1091,7 @@
           "insulin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -1111,7 +1111,7 @@
         "conditions": [],
         "medications": [],
         "risk_level": "low",
-        "next_step": "routine follow-up"
+        "next_step": "medication management"
       }
     },
     {
@@ -1205,7 +1205,7 @@
           "albuterol"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "urgent respiratory evaluation"
       }
     },
     {
@@ -1219,7 +1219,7 @@
           "insulin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "neurology referral"
       }
     },
     {
@@ -1233,7 +1233,7 @@
           "losartan"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "icu admission evaluation"
       }
     },
     {
@@ -1247,7 +1247,7 @@
           "apixaban"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency pulmonology consult"
       }
     },
     {
@@ -1261,7 +1261,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -1275,7 +1275,7 @@
           "aspirin"
         ],
         "risk_level": "high",
-        "next_step": "urgent clinical evaluation"
+        "next_step": "emergency cardiology intervention"
       }
     },
     {
@@ -1338,7 +1338,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     },
     {
@@ -1374,7 +1374,7 @@
           "metformin"
         ],
         "risk_level": "moderate",
-        "next_step": "clinician follow-up"
+        "next_step": "endocrinology follow-up"
       }
     }
   ]

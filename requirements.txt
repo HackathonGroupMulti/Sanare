@@ -13,4 +13,8 @@ opentelemetry-sdk>=1.27.0
 qdrant-client>=1.11.0
 temporalio>=1.8.0
 fastmcp>=2.0.0
+# Optional: biomedical NER with GPU support (set SANARE_ENABLE_NER=1)
+torch>=2.2.0
+transformers>=4.40.0
+accelerate>=0.29.0
 

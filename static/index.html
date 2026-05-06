@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanare — Clinical AI</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #76b900;
+      --green-dim: #4e7c00;
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --red: #e05252;
+      --amber: #e0a832;
+      --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--green);
+    }
+
+    .logo span { color: var(--text); }
+
+    .badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border: 1px solid var(--green-dim);
+      color: var(--green);
+      border-radius: 3px;
+      letter-spacing: 1px;
+    }
+
+    .version {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .panel {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow-y: auto;
+      height: calc(100vh - 53px);
+    }
+
+    .panel-left { border-right: 1px solid var(--border); }
+
+    .panel-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    textarea {
+      flex: 1;
+      min-height: 180px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      padding: 14px;
+      border-radius: 4px;
+      resize: vertical;
+      line-height: 1.6;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    textarea:focus { border-color: var(--green-dim); }
+
+    textarea::placeholder { color: var(--muted); }
+
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .example-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .example-btn:hover { border-color: var(--green-dim); color: var(--green); }
+
+    .btn-row { display: flex; gap: 10px; align-items: center; }
+
+    button.primary {
+      background: var(--green);
+      color: #000;
+      border: none;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.15s;
+    }
+
+    button.primary:hover { background: #8fd400; }
+    button.primary:disabled { background: var(--green-dim); cursor: not-allowed; }
+
+    .spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .stage-bar {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .stage-pill {
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+
+    .stage-pill.active { border-color: var(--green); color: var(--green); }
+    .stage-pill.done { border-color: #333; color: #444; background: #111; }
+
+    .field-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px 14px;
+      animation: fadeUp 0.25s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .field-key {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .field-value { color: var(--text); line-height: 1.6; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .tag {
+      background: #1e1e1e;
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .risk-low    { background: #0d1f0d; color: var(--green); border: 1px solid var(--green-dim); }
+    .risk-moderate { background: #1f180d; color: var(--amber); border: 1px solid #7a5a00; }
+    .risk-high   { background: #1f0d0d; color: var(--red);   border: 1px solid #7a0000; }
+
+    .ner-section { margin-top: 8px; }
+
+    .ner-entity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      border-bottom: 1px solid #1e1e1e;
+      animation: fadeUp 0.2s ease;
+    }
+
+    .ner-entity:last-child { border-bottom: none; }
+
+    .ner-text { flex: 1; }
+
+    .ner-label {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.8px;
+      min-width: 70px;
+    }
+
+    .ner-source {
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    .ner-source.ml     { background: #0d1320; color: #5599ff; border: 1px solid #1a3060; }
+    .ner-source.llm    { background: #1a0d20; color: #cc77ff; border: 1px solid #4a1a60; }
+    .ner-source.hybrid { background: #0d1a0d; color: var(--green); border: 1px solid var(--green-dim); }
+
+    .confidence-bar-wrap {
+      width: 80px;
+      height: 4px;
+      background: #1e1e1e;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .confidence-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--green);
+      transition: width 0.4s ease;
+    }
+
+    .confidence-pct {
+      min-width: 36px;
+      text-align: right;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .error-msg {
+      color: var(--red);
+      background: #1f0d0d;
+      border: 1px solid #7a0000;
+      border-radius: 4px;
+      padding: 10px 14px;
+      animation: fadeUp 0.2s ease;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      text-align: center;
+      padding: 48px 0;
+      line-height: 2;
+    }
+
+    .empty-state .arrow { color: var(--green); font-size: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">sanare<span>.</span></div>
+  <div class="badge">NVIDIA NIM</div>
+  <div class="badge">FHIR R4</div>
+  <div class="version">v0.3.0</div>
+</header>
+
+<main>
+  <div class="panel panel-left">
+    <div class="panel-label">Clinical Note</div>
+
+    <textarea id="note" placeholder="54M HTN chest pain on lisinopril SOB exertion..."></textarea>
+
+    <div class="examples">
+      <span class="panel-label" style="width:100%;margin-bottom:2px;">Examples</span>
+      <button class="example-btn" onclick="setExample(0)">HTN + chest pain</button>
+      <button class="example-btn" onclick="setExample(1)">Diabetes + DM meds</button>
+      <button class="example-btn" onclick="setExample(2)">Stroke (high risk)</button>
+      <button class="example-btn" onclick="setExample(3)">Routine follow-up</button>
+    </div>
+
+    <div class="btn-row">
+      <button class="primary" id="run-btn" onclick="runStream()">Analyze</button>
+      <div class="spinner" id="spinner"></div>
+    </div>
+
+    <div class="stage-bar" id="stage-bar" style="display:none">
+      <div class="stage-pill" id="pill-deidentifying">PHI redaction</div>
+      <div class="stage-pill" id="pill-extracting">extraction</div>
+      <div class="stage-pill" id="pill-ner_running">NER</div>
+      <div class="stage-pill" id="pill-done">complete</div>
+    </div>
+  </div>
+
+  <div class="panel panel-right" id="output">
+    <div class="empty-state">
+      <div class="arrow">&#8592;</div>
+      Paste a clinical note and click Analyze.<br/>
+      Fields stream in as they're extracted.
+    </div>
+  </div>
+</main>
+
+<script>
+  const EXAMPLES = [
+    "54M HTN chest pain on lisinopril SOB exertion",
+    "65F diabetes on metformin and amlodipine requesting follow-up",
+    "72M altered mental status, suspected stroke, BP 210/120, transferred to ED",
+    "28F medication refill, allergic rhinitis, stable on loratadine",
+  ];
+
+  function setExample(i) {
+    document.getElementById("note").value = EXAMPLES[i];
+  }
+
+  const STAGE_ORDER = ["deidentifying", "extracting", "ner_running", "done"];
+
+  function setPill(stage, state) {
+    const el = document.getElementById(`pill-${stage}`);
+    if (!el) return;
+    el.classList.remove("active", "done");
+    if (state === "active") el.classList.add("active");
+    if (state === "done")   el.classList.add("done");
+  }
+
+  function fieldCard(key, value) {
+    const card = document.createElement("div");
+    card.className = "field-card";
+    card.id = `field-${key}`;
+
+    const label = document.createElement("div");
+    label.className = "field-key";
+    label.textContent = key.replace(/_/g, " ");
+    card.appendChild(label);
+
+    const val = document.createElement("div");
+    val.className = "field-value";
+
+    if (key === "risk_level") {
+      const badge = document.createElement("span");
+      badge.className = `risk-badge risk-${value}`;
+      badge.textContent = value;
+      val.appendChild(badge);
+    } else if (Array.isArray(value)) {
+      const list = document.createElement("div");
+      list.className = "tag-list";
+      value.forEach(item => {
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = item;
+        list.appendChild(tag);
+      });
+      val.appendChild(list);
+    } else {
+      val.textContent = value;
+    }
+
+    card.appendChild(val);
+    return card;
+  }
+
+  function nerSection(entities) {
+    if (!entities || entities.length === 0) return null;
+
+    const wrap = document.createElement("div");
+    wrap.className = "field-card ner-section";
+
+    const label = document.createElement("div");
+    label.className = "field-key";
+    label.textContent = "NER entities — confidence";
+    wrap.appendChild(label);
+
+    entities.sort((a, b) => b.confidence - a.confidence).forEach(e => {
+      const row = document.createElement("div");
+      row.className = "ner-entity";
+
+      const txt = document.createElement("span");
+      txt.className = "ner-text";
+      txt.textContent = e.text;
+
+      const lbl = document.createElement("span");
+      lbl.className = "ner-label";
+      lbl.textContent = e.label;
+
+      const src = document.createElement("span");
+      src.className = `ner-source ${e.source}`;
+      src.textContent = e.source;
+
+      const barWrap = document.createElement("div");
+      barWrap.className = "confidence-bar-wrap";
+      const bar = document.createElement("div");
+      bar.className = "confidence-bar";
+      bar.style.width = `${Math.round(e.confidence * 100)}%`;
+      barWrap.appendChild(bar);
+
+      const pct = document.createElement("span");
+      pct.className = "confidence-pct";
+      pct.textContent = `${Math.round(e.confidence * 100)}%`;
+
+      row.append(txt, lbl, src, barWrap, pct);
+      wrap.appendChild(row);
+    });
+
+    return wrap;
+  }
+
+  let activeSource = null;
+
+  async function runStream() {
+    const text = document.getElementById("note").value.trim();
+    if (!text) return;
+
+    if (activeSource) { activeSource.close(); activeSource = null; }
+
+    const btn = document.getElementById("run-btn");
+    const spinner = document.getElementById("spinner");
+    const stageBar = document.getElementById("stage-bar");
+    const output = document.getElementById("output");
+
+    btn.disabled = true;
+    spinner.style.display = "block";
+    stageBar.style.display = "flex";
+    output.innerHTML = "";
+
+    STAGE_ORDER.forEach(s => setPill(s, ""));
+
+    const url = `/analyze/stream?text=${encodeURIComponent(text)}`;
+    const source = new EventSource(url);
+    activeSource = source;
+
+    source.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+
+      if (data.stage) {
+        const prev = STAGE_ORDER[STAGE_ORDER.indexOf(data.stage) - 1];
+        if (prev) setPill(prev, "done");
+        setPill(data.stage, "active");
+
+        if (data.stage === "done") {
+          STAGE_ORDER.forEach(s => setPill(s, "done"));
+          btn.disabled = false;
+          spinner.style.display = "none";
+          source.close();
+          activeSource = null;
+        }
+      }
+
+      if (data.field) {
+        const existing = document.getElementById(`field-${data.field}`);
+        if (existing) existing.remove();
+        output.appendChild(fieldCard(data.field, data.value));
+      }
+
+      if (data.ner_entities) {
+        const existing = document.getElementById("ner-section");
+        if (existing) existing.remove();
+        const section = nerSection(data.ner_entities);
+        if (section) {
+          section.id = "ner-section";
+          output.appendChild(section);
+        }
+      }
+
+      if (data.error) {
+        const msg = document.createElement("div");
+        msg.className = "error-msg";
+        msg.textContent = `Error: ${data.error}`;
+        output.appendChild(msg);
+        btn.disabled = false;
+        spinner.style.display = "none";
+        source.close();
+        activeSource = null;
+      }
+    };
+
+    source.onerror = () => {
+      btn.disabled = false;
+      spinner.style.display = "none";
+      source.close();
+      activeSource = null;
+    };
+  }
+
+  document.getElementById("note").addEventListener("keydown", e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter") runStream();
+  });
+</script>
+</body>
+</html>

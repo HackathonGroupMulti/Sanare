@@ -19,6 +19,18 @@ FALLBACK_RECOGNIZERS = [
     RegexRecognizer("SSN", re.compile(r"\b\d{3}-\d{2}-\d{4}\b")),
     RegexRecognizer("MRN", re.compile(r"\b(?:MRN|mrn)[:#\s-]*[A-Za-z0-9-]{4,}\b")),
     RegexRecognizer("DATE", re.compile(r"\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b")),
+    # Catches names introduced by clinical context keywords (e.g. "patient John Smith")
+    RegexRecognizer(
+        "PERSON",
+        re.compile(
+            r"\b(?:patient|pt|name|provider|physician|dr\.?|doctor)\s+([A-Z][a-z]+(?: [A-Z][a-z]+){1,2})\b"
+        ),
+    ),
+    # Catches standalone Title Case pairs not preceded by a digit (avoids matching "Type 2")
+    RegexRecognizer(
+        "PERSON",
+        re.compile(r"(?<!\d )(?<!\d)\b([A-Z][a-z]{1,20} [A-Z][a-z]{1,20})\b(?! (mg|ml|mcg|units?|mmhg|bpm))"),
+    ),
 ]
 
 

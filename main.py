@@ -1,6 +1,10 @@
+import asyncio
+import json
 import os
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 
 from sanare.config import load_environment
 from sanare.evaluation import ClinicalEvaluator
@@ -19,7 +23,7 @@ from sanare.schemas import (
     RunRecord,
 )
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 load_environment()
 
@@ -27,6 +31,15 @@ app = FastAPI(title="Sanare Clinical Agent API", version=VERSION)
 app.add_middleware(OptionalApiKeyMiddleware)
 pipeline = ClinicalPipeline()
 evaluator = ClinicalEvaluator(agent=pipeline.agent)
+
+_static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.isdir(_static_dir):
+    app.mount("/static", StaticFiles(directory=_static_dir), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def demo_ui() -> FileResponse:
+    return FileResponse(os.path.join(_static_dir, "index.html"))
 
 
 @app.get("/health")
@@ -43,6 +56,7 @@ def capabilities() -> CapabilityReport:
             "POST /analyze",
             "POST /analyze/full",
             "POST /analyze/fhir",
+            "GET /analyze/stream",
             "POST /evaluate",
             "GET /runs/{run_id}",
         ],
@@ -64,6 +78,7 @@ def capabilities() -> CapabilityReport:
             "Temporal",
             "MCP HTTP",
             "NVIDIA NIM",
+            "NVIDIA GPU-accelerated biomedical NER (SANARE_ENABLE_NER=1)",
             "NVIDIA Dynamo-ready inference",
             "NeMo Guardrails-ready safety layer",
         ],
@@ -93,6 +108,41 @@ def analyze_full(request: AnalyzeRequest) -> AnalyzeEnvelope:
 @app.post("/analyze/fhir", response_model=FhirEnvelope)
 def analyze_fhir(request: AnalyzeRequest) -> FhirEnvelope:
     return pipeline.analyze_fhir(request.text)
+
+
+@app.get("/analyze/stream")
+async def analyze_stream(text: str, request: Request) -> StreamingResponse:
+    def _sse(payload: dict) -> str:
+        return f"data: {json.dumps(payload)}\n\n"
+
+    async def event_gen():
+        loop = asyncio.get_event_loop()
+
+        yield _sse({"stage": "deidentifying"})
+        redacted = await loop.run_in_executor(None, pipeline.deidentifier.redact, text)
+        yield _sse({"stage": "deidentified", "phi_count": len(redacted.phi_entities)})
+
+        yield _sse({"stage": "extracting"})
+        analysis = await loop.run_in_executor(None, pipeline.agent.analyze, redacted.text)
+
+        yield _sse({"stage": "extracted"})
+
+        for key, value in analysis.model_dump().items():
+            yield _sse({"field": key, "value": value})
+            await asyncio.sleep(0.07)
+
+        if pipeline.ner is not None:
+            yield _sse({"stage": "ner_running"})
+            ner_entities = await loop.run_in_executor(None, pipeline._run_ner, redacted.text, analysis)
+            yield _sse({"ner_entities": [e.model_dump() for e in ner_entities]})
+
+        yield _sse({"stage": "done"})
+
+    return StreamingResponse(
+        event_gen(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @app.post("/evaluate", response_model=EvaluationResult)

@@ -2,6 +2,8 @@
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+NERSource = Literal["ml", "llm", "hybrid"]
+
 RiskLevel = Literal["low", "moderate", "high"]
 RunStatus = Literal["completed", "failed"]
 
@@ -40,6 +42,13 @@ class ClinicalAnalysis(BaseModel):
         return cleaned
 
 
+class NEREntity(BaseModel):
+    text: str
+    label: str
+    confidence: float
+    source: NERSource
+
+
 class CodedConcept(BaseModel):
     text: str
     system: str
@@ -57,6 +66,7 @@ class AnalyzeEnvelope(BaseModel):
     analysis: ClinicalAnalysis
     phi_entities: list[str]
     fhir: dict[str, Any]
+    ner_entities: list[NEREntity] = Field(default_factory=list)
 
 
 class FhirEnvelope(BaseModel):
@@ -83,10 +93,18 @@ class EvaluationRequest(BaseModel):
     cases: list[EvaluationCase] = Field(..., min_length=1)
 
 
+class FieldF1(BaseModel):
+    precision: float
+    recall: float
+    f1: float
+
+
 class EvaluationResult(BaseModel):
     total_cases: int
     exact_field_accuracy: float
     risk_accuracy: float
+    conditions_f1: FieldF1
+    medications_f1: FieldF1
     hallucination_violations: int
     failures: list[dict[str, Any]]
 

@@ -1,12 +1,18 @@
 ﻿from __future__ import annotations
 
 import os
+import time
 from dataclasses import dataclass
 from typing import Any
 
 
 class LLMUnavailableError(RuntimeError):
     pass
+
+
+_RETRY_STATUSES = {429, 500, 502, 503, 504}
+_MAX_RETRIES = 3
+_RETRY_BASE_DELAY = 1.0
 
 
 @dataclass(frozen=True)
@@ -85,10 +91,18 @@ class LLMClient:
         else:
             request_kwargs["response_format"] = {"type": "json_object"}
 
-        response = client.chat.completions.create(
-            **request_kwargs,
-        )
-        return response.choices[0].message.content or "{}"
+        last_exc: Exception | None = None
+        for attempt in range(_MAX_RETRIES):
+            try:
+                response = client.chat.completions.create(**request_kwargs)
+                return response.choices[0].message.content or "{}"
+            except Exception as exc:
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                if status not in _RETRY_STATUSES:
+                    raise
+                last_exc = exc
+                time.sleep(_RETRY_BASE_DELAY * (2**attempt))
+        raise last_exc  # type: ignore[misc]
 
     def _default_model(self, provider: str) -> str:
         if provider == "vllm":
