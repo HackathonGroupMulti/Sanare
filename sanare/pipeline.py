@@ -47,7 +47,7 @@ class ClinicalPipeline:
                 evidence = self.retriever.search(redacted.text)
                 span.set_attribute("retrieval.hit_count", len(evidence))
 
-                analysis = self.agent.analyze(redacted.text)
+                analysis = self.agent.analyze(redacted.text, [h.text for h in evidence])
                 ner_entities = self._run_ner(redacted.text, analysis)
                 bundle = self.fhir_mapper.bundle(run_id, analysis)
 

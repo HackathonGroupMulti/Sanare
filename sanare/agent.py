@@ -71,26 +71,31 @@ class ClinicalExtractionAgent:
     def __init__(self, llm_client: LLMClient | None = None) -> None:
         self.llm_client = llm_client or LLMClient()
 
-    def analyze(self, note: str) -> ClinicalAnalysis:
+    def analyze(self, note: str, evidence: list[str] | None = None) -> ClinicalAnalysis:
         try:
-            raw = self.llm_client.complete_json(SYSTEM_PROMPT, self._analysis_prompt(note))
+            raw = self.llm_client.complete_json(SYSTEM_PROMPT, self._analysis_prompt(note, evidence))
             return self._validated_or_repaired(note, raw)
         except LLMUnavailableError:
             return self._heuristic_analysis(note)
 
-    def analyze_streaming(self, note: str) -> Generator[str | ClinicalAnalysis, None, None]:
+    def analyze_streaming(self, note: str, evidence: list[str] | None = None) -> Generator[str | ClinicalAnalysis, None, None]:
         """Yield str tokens as the LLM generates, then yield the final ClinicalAnalysis."""
         try:
             raw_parts: list[str] = []
-            for token in self.llm_client.stream_tokens(SYSTEM_PROMPT, self._analysis_prompt(note)):
+            for token in self.llm_client.stream_tokens(SYSTEM_PROMPT, self._analysis_prompt(note, evidence)):
                 raw_parts.append(token)
                 yield token
             yield self._validated_or_repaired(note, "".join(raw_parts))
         except (LLMUnavailableError, Exception):
             yield self._heuristic_analysis(note)
 
-    def _analysis_prompt(self, note: str) -> str:
-        return f'Clinical text:\n"""{note.strip()}"""'
+    def _analysis_prompt(self, note: str, evidence: list[str] | None = None) -> str:
+        parts: list[str] = []
+        if evidence:
+            guideline_block = "\n".join(f"- {e}" for e in evidence)
+            parts.append(f"Relevant clinical guidelines:\n{guideline_block}")
+        parts.append(f'Clinical text:\n"""{note.strip()}"""')
+        return "\n\n".join(parts)
 
     def _validated_or_repaired(self, note: str, raw: str) -> ClinicalAnalysis:
         try:

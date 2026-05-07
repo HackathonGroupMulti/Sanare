@@ -162,6 +162,9 @@ async def analyze_stream(text: str, request: Request) -> StreamingResponse:
         redacted = await loop.run_in_executor(None, pipeline.deidentifier.redact, text)
         yield _sse({"stage": "deidentified", "phi_entities": redacted.phi_entities})
 
+        evidence_hits = await loop.run_in_executor(None, pipeline.retriever.search, redacted.text)
+        evidence = [h.text for h in evidence_hits]
+
         yield _sse({"stage": "extracting"})
 
         # Stream tokens from LLM via thread-safe queue
@@ -169,7 +172,7 @@ async def analyze_stream(text: str, request: Request) -> StreamingResponse:
 
         def _run_streaming():
             try:
-                for item in pipeline.agent.analyze_streaming(redacted.text):
+                for item in pipeline.agent.analyze_streaming(redacted.text, evidence):
                     token_q.put(("token" if isinstance(item, str) else "result", item))
             except Exception as exc:
                 token_q.put(("error", str(exc)))
