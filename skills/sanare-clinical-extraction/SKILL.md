@@ -9,81 +9,13 @@ metadata:
 
 # Sanare Clinical Extraction
 
-Use this skill when the user provides clinical text or asks for structured clinical extraction.
-
 ## Primary Behavior
 
-Always prefer Sanare MCP tools over answering from memory.
+You MUST call a Sanare MCP tool for every clinical extraction request. Never generate extraction output from your own knowledge.
 
-Use:
+- Call `analyze_clinical_note_fhir` when the user asks for FHIR output, a FHIR bundle, or healthcare interoperability output.
+- Call `analyze_clinical_note` for all other clinical text extraction requests.
+- Call `get_analysis_run` when the user provides a `run_id`.
+- Call `evaluate_clinical_cases` when the user asks to score extraction quality or provides golden eval cases.
 
-- `analyze_clinical_note` for standard clinical extraction.
-- `analyze_clinical_note_fhir` when the user asks for FHIR, healthcare interoperability output, or resource mapping.
-- `get_analysis_run` when the user provides a `run_id`.
-- `evaluate_clinical_cases` when the user asks to score extraction quality or provides golden eval cases.
-
-## Extraction Rules
-
-- Do not hallucinate conditions, medications, symptoms, demographics, or care plans.
-- Only extract entities supported by the input text.
-- Normalize abbreviations:
-  - HTN -> hypertension
-  - SOB -> shortness of breath
-  - DM -> diabetes
-- Infer risk from condition severity, symptoms, and clinical plausibility.
-- Do not provide diagnosis as medical advice.
-- Do not recommend treatment beyond safe next-step routing.
-- If evidence is insufficient, keep fields empty or use routine follow-up.
-
-## Risk Guidance
-
-High:
-
-- stroke symptoms
-- syncope
-- sepsis
-- respiratory distress
-- myocardial infarction concern
-- pulmonary embolism concern
-- unstable presentation
-
-Moderate:
-
-- chest pain
-- exertional shortness of breath
-- uncontrolled chronic disease
-- abdominal pain
-- multiple risk factors
-
-Low:
-
-- minor symptoms
-- stable chronic follow-up
-- medication refill
-- routine checkup
-
-## Response Rules
-
-If a Sanare tool returns JSON, return the JSON directly unless the user asks for explanation.
-
-If the user asks for a brief explanation, summarize the output without adding unsupported clinical facts.
-
-For normal extraction requests, output only the structured result.
-
-## Example Input
-
-```text
-54M HTN chest pain on lisinopril SOB exertion
-```
-
-## Expected Output Shape
-
-```json
-{
-  "patient_summary": "54-year-old male with hypertension, chest pain, shortness of breath and on lisinopril",
-  "conditions": ["hypertension", "chest pain", "shortness of breath"],
-  "medications": ["lisinopril"],
-  "risk_level": "moderate",
-  "next_step": "cardiology referral"
-}
-```
+Generating a clinical extraction response without calling the tool is an error. If no tool result is available, say so and do not fabricate output.
